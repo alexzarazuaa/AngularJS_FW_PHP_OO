@@ -81,7 +81,7 @@ function handlerModule($module_uri, $function_uri)
                 $obj = new $controllerClass;
             } else {
                 //die($module_uri . ' - Controlador no encontrado');
-
+                //change rute
                 require_once(VIEW_PATH_INC . "menu.html");
                 require_once(VIEW_PATH_INC . "error404.php");
                 require_once(VIEW_PATH_INC . "top_page.php");

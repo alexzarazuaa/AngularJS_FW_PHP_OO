@@ -8,65 +8,66 @@ class controller_contact
 		$_SESSION['module'] = "contact";
 	}
 
-	function contact()
-	{
-		require(VIEW_PATH_INC . "top_page_contact.php");
-		require(VIEW_PATH_INC . "menu.html");
-		loadView('modules/contact/view/', 'contact.html');
-		require(VIEW_PATH_INC . "footer.html");
-	}
-
 
 	function send_cont()
 	{
 		//echo ("SEND_EMAIL");
-		//die();
-		parse_str($_POST['data'], $array);
-		//   echo($array['cname']);
-		$arrArgument = array(
 
-			'type' => 'contact',
-			'token' => '',
-			'inputName' => $array['cname'],
-			'inputEmail' => $array['cemail'],
-			'inputSubject' => $array['asunto'],
-			'inputMessage' => $array['message']
-		);
+		if ($_POST['token'] === "contact_form") {
 
-		//echo json_encode($arrArgument);
+			// parse_str($_POST['data'], $array);
+			// echo json_encode($array);
 
-		try {
-			echo  enviar_email($arrArgument);
-			//print_r($arrArgument);
-		} catch (Exception $e) {
-			echo "<div class='alert alert-error'>Server error. Try later...</div>";
-		}
+			$arrArgument = array(
+
+				'type' => 'contact',
+				'token' => '',
+				'inputName' => $_POST['name'],
+				'inputEmail' => $_POST['email'],
+				'inputSubject' => $_POST['matter'],
+				'message' => $_POST['message']
+			);
 
 
-		$arrArgument = array(
+			//echo json_encode($arrArgument);
 
-			'type' => 'admin',
-			'token' => '',
-			'inputName' => $array['cname'],
-			'inputEmail' => $array['cemail'],
-			'inputSubject' => $array['asunto'],
-			'inputMessage' => $array['message']
-		);
+			try {
+				enviar_email($arrArgument);
+				echo json_encode("true");
+			} catch (Exception $e) {
+				//echo "<div class='alert alert-error'>Server error. Try later...</div>";
+				echo json_encode("false");
+			}
 
-		try {
-			enviar_email($arrArgument);
-		} catch (Exception $e) {
-			echo "<div class='alert alert-error'>Server error. Try later...</div>";
-		}
+
+
+
+			$arrArgument = array(
+
+				'type' => 'admin',
+				'token' => '',
+				'inputName' => $_POST['name'],
+				'inputEmail' => $_POST['email'],
+				'inputSubject' => $_POST['matter'],
+				'message' => $_POST['message']
+			);
+
+			try {
+				enviar_email($arrArgument);
+				//echo json_encode("true");
+			} catch (Exception $e) {
+				//echo "<div class='alert alert-error'>Server error. Try later...</div>";
+				//echo json_encode("false");
+			}
 	}
+}
 
 
-	function shops_map(){
-		
-			$json = array();
-			 $json = loadModel(MODEL_CONTACT, "contact_model", "shops_model");
-			 echo json_encode($json);
-		
+	function shops_map()
+	{
+
+		$json = array();
+		$json = loadModel(MODEL_CONTACT, "contact_model", "shops_model");
+		echo json_encode($json);
 	}
-
 }

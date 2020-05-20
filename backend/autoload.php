@@ -24,8 +24,8 @@ function loadClasses($className) {
         set_include_path('modules/' . $module_name . '/model/' . $model_name . '/');
         spl_autoload($className);
 
-        //module search
-    } else if (file_exists('view/js/' . $module_name . '/model/' . $model_name . '/' . $className . '.class.singleton.php')) {
+        // cambiar rute //module search
+    } else if (file_exists('frondtend/assets/js/' . $module_name . '/model/' . $model_name . '/' . $className . '.class.singleton.php')) {
         set_include_path('view/js/' . $module_name . '/model/' . $model_name . '/');
         spl_autoload($className);
     }

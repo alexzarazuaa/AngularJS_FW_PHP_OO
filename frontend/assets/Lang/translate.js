@@ -10,7 +10,7 @@ function cambiarIdioma(lang) {
   //console.log(elems);
 
   $.ajax({
-    url: 'view/Lang/' + lang + '.json',
+    url: 'frontend/assets/Lang/' + lang + '.json',
     type: 'POST',
     dataType: 'JSON',
     success: function (data) {

@@ -1,5 +1,5 @@
 <?php
-define('PROJECT', '/SPORT_V1.6/');
+define('PROJECT', '/SPORT_V1.7/');
 
 //SITE_ROOT
 define('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'] . PROJECT);
@@ -12,29 +12,28 @@ define('SITE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . PROJECT);
 //PATHS
 
 //CSS
-define('CSS_PATH', SITE_PATH . 'view/css/');
+define('CSS_PATH', SITE_PATH . 'frontend/assets/css/');
 
 //VIEW_PATH_LANG
-define('LANG_PATH', SITE_PATH . 'view/Lang/');
+define('LANG_PATH', SITE_PATH . 'frontend/assets/Lang/');
 
 //JS
-define('JS_PATH', SITE_PATH . 'view/js/');
+define('JS_PATH', SITE_PATH . 'frontend/assets/js/');
 
 //JQUERY
-define('JQUERY_PATH', SITE_PATH . 'view/jquery/');
+define('JQUERY_PATH', SITE_PATH . 'frontend/assets/jquery/');
 
 //ACTIVITY
-define('ACTIVITY_PATH', SITE_PATH . 'view/js/Activiti/');
+define('ACTIVITY_PATH', SITE_PATH . 'frontend/assets/js/Activiti/');
 
 
 //TOASTR
-define('TOASTR_PATH', SITE_PATH . 'view/js/toastr/');
-
+define('TOASTR_PATH', SITE_PATH . 'frontend/assets/js/toastr/');
 //IMG
-define('IMG_PATH', SITE_PATH . 'view/img/');
+define('IMG_PATH', SITE_PATH . 'frontend/assets/img/');
 
 //IMAGES 
-define('IMGAGES_PATH', SITE_PATH . 'view/images/');
+define('IMGAGES_PATH', SITE_PATH . 'frontend/assets/images/');
 
 
 
@@ -43,81 +42,82 @@ define('IMGAGES_PATH', SITE_PATH . 'view/images/');
 define('PRODUCTION', true);
 
 //ROOT
-//HACER PARA LA CARPETA DE UTILS
+
 
 //MODEL
-define('MODEL_PATH', SITE_ROOT . 'model/');
+define('MODEL_PATH', SITE_ROOT . 'backend/model/');
 
 //MODULES
-define('MODULES_PATH', SITE_ROOT . 'modules/');
+define('MODULES_PATH', SITE_ROOT . 'backend/modules/');
 
 //VIEW_INC
-define('VIEW_PATH_INC', SITE_ROOT . 'view/inc/');
+define('VIEW_PATH_INC', SITE_ROOT . 'frontend/assets/inc/');
 
 //RESOURCES
-define('RESOURCES', SITE_ROOT . 'resources/');
+define('RESOURCES', SITE_ROOT . 'backend/resources/');
 
 //ROUTER
-define('ROUTER', SITE_ROOT . 'router/');
+define('ROUTER', SITE_ROOT . 'backend/router/');
 
 //MEDIA
-define('MEDIA_PATH', SITE_ROOT . '/media/');
+define('MEDIA_PATH', SITE_ROOT . 'backend/media/');
 
 //UTILS
-define('UTILS', SITE_ROOT . 'utils/');
+define('UTILS', SITE_ROOT . 'backend/utils/');
 //FSSEARCH
-define('FSEACRH_PATH', SITE_ROOT . 'view/js/');
+define('FSEACRH_PATH', SITE_ROOT . 'frontend/assets/js/');
 
 
 //MODEL_CONTACT
-define('UTILS_CONTACT', SITE_ROOT . 'modules/contact/utils/');
- define('MODEL_CONTACT', SITE_ROOT . 'modules/contact/model/');
- define('DAO_CONTACT', SITE_ROOT . 'modules/contact/model/DAO/');
-define('BLL_CONTACT', SITE_ROOT . 'modules/contact/model/BLL/');
-define('JS_VIEW_CONTACT', SITE_PATH . 'modules/contact/view/js/');
+define('UTILS_CONTACT', SITE_ROOT . 'backend/modules/contact/utils/');
+define('MODEL_CONTACT', SITE_ROOT . 'backend/modules/contact/model/');
+define('DAO_CONTACT', SITE_ROOT . 'backend/modules/contact/model/DAO/');
+define('BLL_CONTACT', SITE_ROOT . 'backend/modules/contact/model/BLL/');
+
 
 
 //MODEL HOME
-define('MODEL_PATH_HOME', SITE_ROOT . 'modules/home/model/');
-define('DAO_HOME', SITE_ROOT . 'modules/home/model/DAO/');
-define('BLL_HOME', SITE_ROOT . 'modules/home/model/BLL/');
-define('MODEL_HOME', SITE_ROOT . 'modules/home/model/model/');
-define('JS_VIEW_HOME', SITE_PATH . 'modules/home/view/js/');
+define('MODEL_PATH_HOME', SITE_ROOT . 'backend/modules/home/model/');
+define('DAO_HOME', SITE_ROOT . 'backend/modules/home/model/DAO/');
+define('BLL_HOME', SITE_ROOT . 'backend/modules/home/model/BLL/');
+define('MODEL_HOME', SITE_ROOT . 'backend/modules/home/model/model/');
+
 
 
 //MODEL SHOP
-define('MODEL_PATH_SHOP', SITE_ROOT . 'modules/shop/model/');
-define('DAO_SHOP', SITE_ROOT . 'modules/shop/model/DAO/');
-define('BLL_SHOP', SITE_ROOT . 'modules/shop/model/BLL/');
-define('MODEL_SHOP', SITE_ROOT . 'modules/shop/model/model/');
-define('JS_VIEW_SHOP', SITE_PATH . 'modules/shop/view/js/');
+define('MODEL_PATH_SHOP', SITE_ROOT . 'backend/modules/shop/model/');
+define('DAO_SHOP', SITE_ROOT . 'backend/modules/shop/model/DAO/');
+define('BLL_SHOP', SITE_ROOT . 'backend/modules/shop/model/BLL/');
+define('MODEL_SHOP', SITE_ROOT . 'backend/modules/shop/model/model/');
+
 
 
 //MODEL CART
-define('MODEL_PATH_CART', SITE_ROOT . 'modules/cart/model/');
-define('DAO_CART', SITE_ROOT . 'modules/cart/model/DAO/');
-define('BLL_CART', SITE_ROOT . 'modules/cart/model/BLL/');
-define('MODEL_CART', SITE_ROOT . 'modules/cart/model/model/');
-define('JS_VIEW_CART', SITE_PATH . 'modules/cart/view/js/');
+define('MODEL_PATH_CART', SITE_ROOT . 'backend/modules/cart/model/');
+define('DAO_CART', SITE_ROOT . 'backend/modules/cart/model/DAO/');
+define('BLL_CART', SITE_ROOT . 'backend/modules/cart/model/BLL/');
+define('MODEL_CART', SITE_ROOT . 'backend/modules/cart/model/model/');
+
 
 
 
 
 //MODEL LOGIN
-define('MODEL_PATH_LOGIN', SITE_ROOT . 'modules/login/model/');
-define('DAO_LOGIN', SITE_ROOT . 'modules/login/model/DAO/');
-define('BLL_LOGIN', SITE_ROOT . 'modules/login/model/BLL/');
-define('MODEL_LOGIN', SITE_ROOT . 'modules/login/model/model/');
-define('JS_VIEW_LOGIN', SITE_PATH . 'modules/login/view/js/');
+define('MODEL_PATH_LOGIN', SITE_ROOT . 'backend/modules/login/model/');
+define('DAO_LOGIN', SITE_ROOT . 'backend/modules/login/model/DAO/');
+define('BLL_LOGIN', SITE_ROOT . 'backend/modules/login/model/BLL/');
+define('MODEL_LOGIN', SITE_ROOT . 'backend/modules/login/model/model/');
 
 
+
+//TERMINAR DE CAMBIAR RUTAS DEL FSEARCH
 
 //MODEL SEARCH
 define('MODEL_PATH_SEARCH', SITE_ROOT . 'view/js/search/model/');
 define('DAO_SEARCH', SITE_ROOT . 'view/js/search/model/DAO/');
 define('BLL_SEARCH', SITE_ROOT . 'view/js/search/model/BLL/');
 define('MODEL_SEARCH', SITE_ROOT . 'view/js/search/model/model/');
-define('JS_VIEW_SEARCH', SITE_PATH . 'view/js/search/view/js/');
+
 
 
 
