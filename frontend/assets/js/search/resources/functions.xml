@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+
+    <function>
+        <name>talla</name>
+        <uri></uri>
+    </function>
+
+        <function>
+        <name>marca</name>
+        <uri></uri>
+    </function>
+
+     <function>
+        <name>autocomplete</name>
+        <uri></uri>
+    </function>
+
+    
+</functions>

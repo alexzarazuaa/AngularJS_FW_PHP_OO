@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+
+    <function>
+        <name>contact</name>
+        <uri></uri>
+    </function>
+
+    <function>
+        <name>send_cont</name>
+        <uri></uri>
+    </function>
+
+     <function>
+        <name>shops_map</name>
+        <uri></uri>
+    </function>
+
+    
+</functions>
