@@ -13,54 +13,50 @@ class controller_contact
 	{
 		//echo ("SEND_EMAIL");
 
-		if ($_POST['token'] === "contact_form") {
+		// parse_str($_POST['data'], $array);
+		// echo json_encode($array);
 
-			// parse_str($_POST['data'], $array);
-			// echo json_encode($array);
+		$arrArgument = array(
 
-			$arrArgument = array(
-
-				'type' => 'contact',
-				'token' => '',
-				'inputName' => $_POST['name'],
-				'inputEmail' => $_POST['email'],
-				'inputSubject' => $_POST['matter'],
-				'message' => $_POST['message']
-			);
+			'type' => 'contact',
+			'token' => '',
+			'inputName' => $_POST['name'],
+			'inputEmail' => $_POST['email'],
+			'inputSubject' => $_POST['matter'],
+			'message' => $_POST['message']
+		);
 
 
-			//echo json_encode($arrArgument);
+		//echo json_encode($arrArgument);
 
-			try {
-				enviar_email($arrArgument);
-				echo json_encode("true");
-			} catch (Exception $e) {
-				//echo "<div class='alert alert-error'>Server error. Try later...</div>";
-				echo json_encode("false");
-			}
+		try {
+			echo enviar_email($arrArgument);
+		} catch (Exception $e) {
+
+			echo json_encode("false");
+		}
 
 
 
 
-			$arrArgument = array(
+		$arrArgument = array(
 
-				'type' => 'admin',
-				'token' => '',
-				'inputName' => $_POST['name'],
-				'inputEmail' => $_POST['email'],
-				'inputSubject' => $_POST['matter'],
-				'message' => $_POST['message']
-			);
+			'type' => 'admin',
+			'token' => '',
+			'inputName' => $_POST['name'],
+			'inputEmail' => $_POST['email'],
+			'inputSubject' => $_POST['matter'],
+			'message' => $_POST['message']
+		);
 
-			try {
-				enviar_email($arrArgument);
-				//echo json_encode("true");
-			} catch (Exception $e) {
-				//echo "<div class='alert alert-error'>Server error. Try later...</div>";
-				//echo json_encode("false");
-			}
+		try {
+			enviar_email($arrArgument);
+			//echo json_encode("true");
+		} catch (Exception $e) {
+
+			echo json_encode("false");
+		}
 	}
-}
 
 
 	function shops_map()

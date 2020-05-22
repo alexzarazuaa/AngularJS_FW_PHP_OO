@@ -9,6 +9,7 @@ mastersport.factory("services", ['$http','$q', function ($http, $q) {
                   method: 'GET',
                   url: serviceBase + module + '&function=' + functi
               }).success(function(data, status, headers, config) {
+                 console.log(data);
                  defered.resolve(data);
               }).error(function(data, status, headers, config) {
                  defered.reject(data);

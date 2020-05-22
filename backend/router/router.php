@@ -92,10 +92,10 @@ function handlerModule($module_uri, $function_uri)
         }
     }
     if (!$exist) {
-        require_once(VIEW_PATH_INC . "menu.html");
+        require_once(VIEW_PATH_INC . "menu.view.html");
         require_once(VIEW_PATH_INC . "error404.php");
         require_once(VIEW_PATH_INC . "top_page.php");
-        require_once(VIEW_PATH_INC . "footer.html");
+        require_once(VIEW_PATH_INC . "footer.view.html");
     }
 }
 

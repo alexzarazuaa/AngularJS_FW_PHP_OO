@@ -36,10 +36,10 @@ class home_dao
     }
 
 
-    public function select_categories($db,$limit)
+    public function select_categories($db)
     { //data img categories
          //print_r("entra function dao");
-        $sql = " SELECT categoria,imagen from categories order by cont_viewed desc limit $limit  ";
+        $sql = " SELECT categoria,imagen from categories order by cont_viewed desc limit 8 ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

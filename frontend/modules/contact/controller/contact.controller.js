@@ -22,18 +22,16 @@ mastersport.controller('contactCtrl', function ($scope, services, toastr, $timeo
 
         services.post('contact', 'send_cont', contact_form)
             .then(function (response) {
-                console.log(response);
-                if (response == "true") {
-                    console.log("dentro")
-                    toastr.success('El mensaje ha sido enviado correctamente', 'Mensaje enviado',{
-                        closeButton: true
-                    });
+                console.log(response.message);
+                if (response.message == 'Queued. Thank you.') {
+                    //console.log("dentro")
+                    toastr.success("We sent the email, please check your inbox.", "Email sent.");
+                    window.setTimeout(function(){
+                        document.location.href = "";
+                    },2000)
                 } else {
-                    console.log("dentro else")
-                    toastr.error('El mensaje no se ha enviado', 'Mensaje no enviado', {
-                        closeButton: true,
-
-                    });
+                    //console.log("dentro else")
+                    toastr.error("We aren't able to send you an email, please check if the contact information is correct.", "Something went wrong");
                 }
             });
     };

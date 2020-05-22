@@ -30,10 +30,10 @@ class home_model
         //print_r("entra construc model home");
         return $this->bll->obtain_carousel_BLL();
     }
-    public function data_categories($limit)
+    public function data_categories()
     {
         //print_r("entra funct model categories");
-        return $this->bll->obtain_categories_BLL($limit);
+        return $this->bll->obtain_categories_BLL();
     }
     public function count_categoria($categoria)
     {
