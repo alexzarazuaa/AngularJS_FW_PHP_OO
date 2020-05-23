@@ -1,74 +1,30 @@
 <!-- mian-content -->
-<div class="main-banner inner" id="home">
+<div id="home">
   <!-- header -->
   <header class="header">
 
-    <div class="container-fluid px-lg-5">
-      <!-- nav -->
-      <nav class="py-4">
-        <div id="logo">
-          <h1> <a href="#/" data-tr="MASTERSPORT"><span class="fa fa-bold"
-                aria-hidden="true"></span></a></h1>
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#/" class="w3-bar-item w3-button"><b>MASTERSPORT</b></a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="#/" class="w3-bar-item w3-button">HOME</a>
+          <a href="#about" class="w3-bar-item w3-button">SHOP</a>
+          <!--AQUI IRAN LAS OPCINES DE EL CRUD DE USUARIOS Y EL ORDER DE LOS FAVS USERS-->
+          <a id="login_register" type="button" class="btn btn-success" href="/#">CARRITO</a>
+          <a href="#/contact" class="w3-bar-item w3-button">CONTACT</a>
+          <a id="login_register" type="button" class="btn btn-danger" href="/#">LOGIN</a>
+          <a>
+            <input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Busca tu Producto">
+    		    <button type="submit" class="btn" ng-click="search()">Search</button>
+          </a>
         </div>
-
-        <label for="drop" class="toggle">Menu</label>
-        <input type="checkbox" id="drop" />
-        <ul class="menu mt-2">
-          <li><a href="#/" data-tr="Inicio">Inicio</a></li>
-          <!-- tienda -->
-          <li><a href="<?php amigable('?module=shop'); ?>" data-tr="Tienda">Tienda</a></li>
-
-          <!-- conocenos -->
-
-          <li>
-          
-              <li id="print_menu"></li>
-        
-          </li>
-
-          <!-- conocenos -->
-          <li>
-            <!-- First Tier Drop Down -->
-            <label for="drop-2" class="toggle">IDIOMA<span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-            <a href="#">IDIOMA<span class="fa fa-angle-down" aria-hidden="true"></span></a>
-            <input type="checkbox" id="drop-2" />
-            <ul>
-
-              <select id="idioma">
-                <option id="btn-es" value="2" data-tr="Castellano"></option>
-                <option id="btn-en" value="0" data-tr="Inglés"></option>
-                <option id="btn-va" value="1" data-tr="Valenciano"></option>
-              </select>
-            </ul>
-          </li>
-          <li><a href="#/contact" data-tr="Contacto">Contact</a></li>
-          <!--carrito-->
-
-          <!-- CARRITO -->
-          <li>
-            <a type="button" class="btn btn-success" href="<?php amigable('?module=cart'); ?>" data-tr="CARRITO"></a>
-          </li>
-          <!-- /CARRITO -->
-          <!-- <li><a type="button" class="btn btn-danger" id="logout" data-tr="Log Out"></a></li> -->
-          <li>
-            <div id="print_menu"></div>
-          </li>
-
-          <!-- REGISTER / LOGIN -->
-          <li>
-            <a id="login_register"  type="button" class="btn btn-danger" href="<?php amigable('?module=login'); ?>" data-tr="Login"></a>
-          </li>
-          <li><a id="print_menu_client"></a></li>
-          <li><a id="logout_btn"></a></li>
-
-
-
-        </ul>
-      </nav>
-      <!-- //nav -->
+      </div>
     </div>
-    <!--SEARCH-->
 
+
+    <!--SEARCH-->
+    <!-- 
     <ol class="breadcrumb2">
 
       <form class="search">
@@ -89,14 +45,14 @@
           <datalist id="name">
           </datalist>
           <div class="btn"><span id="searchlist" class="fa fa-search" aria-hidden="true"></span></div>
-        </section>
+        </section> -->
 
 
 
-        <!-- <button class="btn"><span class="fa fa-search" aria-hidden="true"></span></button> -->
-        <!--<button class="btn">BUSCAR</button>-->
-      </form>
-    </ol>
+    <!-- <button class="btn"><span class="fa fa-search" aria-hidden="true"></span></button> -->
+    <!--<button class="btn">BUSCAR</button>-->
+    <!-- </form>
+    </ol> -->
     <!--//SEARCH -->
   </header>
 

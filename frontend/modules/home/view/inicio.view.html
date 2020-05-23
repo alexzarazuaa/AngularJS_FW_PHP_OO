@@ -1,48 +1,28 @@
 <!-- CARRUSEL -->
-
-<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-    <div uib-slide ng-repeat="slide in slides track by slide.link" index="$index">
-        <img ng-src="http://localhost/SPORT_V1.7/{{slide.link}}" style="margin:auto;">
-        <div class="carousel-caption">
-            <h4>{{slide.categoria}}</h4>
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" style="max-width:1500px;">
+        <div uib-slide ng-repeat="slide in slides track by slide.link" index="$index">
+            <img ng-src="http://localhost/SPORT_V1.7/{{slide.link}}" style="margin:auto;">
+            <div class="carousel-caption">
+                <h4>{{slide.categoria}}</h4>
+            </div>
         </div>
     </div>
-</div>
-
-
-
 <!-- //CARRUSEL -->
 
 <!--CATEGORIES -->
-<p> </p>
+<br><br>
 <section class="about py-md-5 py-5">
-
     <!-- LISTA CATEGORIAS -->
-    <section class="about py-5">
-        <div class="container pb-lg-3">
-            <h3 class="tittle text-center" data-tr="PRODUCTOS PARA TI">PRODUCTOS PARA TI</h3>
-            <div class="row">
-                <div id="products"></div>
+    <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 text-center">PRODUCTOS PARA TI</h3>
+    </div>
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom" ng-repeat="data in prods">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">{{data.categoria}}</div>
+                <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" alt="House" style="width:100%">
             </div>
         </div>
-
-        <section class="about py-5">
-            <!-- //CATEGORIES -->
-            <!--FEATURED PRODUCTS-->
-            <section class="about py-5">
-                <div class="container pb-lg-3">
-                    <h3 class="tittle text-center" data-tr="LIBROS RELACIONADOS CON LA MODA">LIBROS RELACIONADOS CON LA
-                        MODA</h3>
-                    <div class="row">
-                        <div id="featured"></div>
-                        <div id="btnfeatured"></div>
-                        <div id="nomore"></div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </section>
+    </div>
+    <div class="loadMore" id="click_scroll" ng-click="loadmore()"><a>Load More</a></div>
 </section>
-
-
-<!-- //FEATURED PRODUCTS-->

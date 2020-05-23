@@ -1563,13 +1563,13 @@ width: 100%;
 }
 /*LOADMORE*/
 
-#loadMore {
+.loadMore {
     padding-bottom: 30px;
     padding-top: 30px;
     text-align: center;
     width: 100%;
 }
-#loadMore a {
+.loadMore a {
     background: #042a63;
     border-radius: 3px;
     color: white;
@@ -1578,7 +1578,7 @@ width: 100%;
     transition: all 0.25s ease-out;
     -webkit-font-smoothing: antialiased;
 }
-#loadMore a:hover {
+.loadMore a:hover {
     background-color: #021737;
 }
 
@@ -1614,6 +1614,11 @@ width: 100%;
      margin-left: auto;
      margin-right: auto;
     
+}
+
+#ali{
+    display: flex;
+    align-items: center;
 }
 
 
