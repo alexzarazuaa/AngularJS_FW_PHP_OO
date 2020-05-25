@@ -16,6 +16,21 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                         }
                                 }
                         })
+                        .when("/tienda", {
+                                templateUrl: "frontend/modules/shop/view/shop.view.html", controller: "shopCtrl",
+                                resolve: {
+                                        allproducts: function (services) {
+                                                return services.get('shop', 'data_products');
+                                        }
+                                        // data_categories: function (services) {
+                                        //         return services.get('home', 'data_categories');
+                                        // },
+                                        // count_categoria: function (services) {
+                                        //         return services.get('home', 'count_categoria');
+                                        // }
+                                }
+
+                        })
 
                         .when("/contact", { templateUrl: "frontend/modules/contact/view/contact.view.html", controller: "contactCtrl" })
 

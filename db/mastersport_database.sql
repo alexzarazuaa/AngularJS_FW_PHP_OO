@@ -499,4 +499,57 @@ create table check_purchase
 -- add column  chek_status tinyint(1) DEFAULT false;
 
 
-----------------------------------------------
+-----------------------------------------------
+
+-- ESTRUCTURAS DE LAS VISTAS UTILIZADAS
+
+-- CREATE VIEW `facts_mas100eu` 
+-- AS select `facturas`.`cod_fact` AS `cod_fact`,`facturas`.`nickname` AS `nickname`,`facturas`.`precio` 
+-- AS `precio`,`facturas`.`Fecha` AS `Fecha` 
+-- from `facturas` 
+-- where `facturas`.`precio` > 100
+
+---
+
+-- CREATE VIEW `facts_mas100eu` 
+-- AS select `facturas`.`cod_fact` AS `cod_fact`,`facturas`.`nickname` AS `nickname`,`facturas`.`precio` 
+-- AS `precio`,`facturas`.`Fecha` AS `Fecha` 
+-- from `facturas` 
+-- where `facturas`.`precio` < 100
+
+--- 
+
+-- CREATE  VIEW `prods_calzado`
+--  AS select `products`.`idprod` AS `idprod`,`products`.`nombre` 
+--  AS `nombre`,`products`.`marca` AS `marca`,`products`.`talla`
+--   AS `talla`,`products`.`temporada` AS `temporada`,`products`.`precio` 
+--   AS `precio`,`products`.`categoria` AS `categoria`,`products`.`existencias` 
+--   AS `existencias`,`products`.`descripcion` AS `descripcion`,`products`.`imagen` 
+--   AS `imagen`,`products`.`count_view` AS `count_view`,`products`.`stock` 
+-- AS `stock` 
+-- from `products`
+--  where `products`.`categoria` = 'CALZADO'
+
+---- 
+
+-- CREATE  VIEW `prods_casual` AS 
+-- select `products`.`idprod` AS `idprod`,`products`.`nombre` AS `nombre`,`products`.`marca` 
+-- AS `marca`,`products`.`talla` AS `talla`,`products`.`temporada` AS `temporada`,`products`.`precio`
+--  AS `precio`,`products`.`categoria` AS `categoria`,`products`.`existencias` 
+--  AS `existencias`,`products`.`descripcion` AS `descripcion`,`products`.`imagen` 
+--  AS `imagen`,`products`.`count_view` AS `count_view`,`products`.`stock` AS `stock` 
+--  from `products` 
+-- where `products`.`categoria` = 'CASUAL'
+
+--- 
+
+
+-- CREATE  DEFINER VIEW `talla_l` AS 
+-- select `products`.`idprod` AS `idprod`,`products`.`nombre` AS `nombre`,`products`.`marca` 
+-- AS `marca`,`products`.`talla` AS `talla`,`products`.`temporada` 
+-- AS `temporada`,`products`.`precio` AS `precio`,`products`.`categoria` 
+-- AS `categoria`,`products`.`existencias` AS `existencias`,`products`.`descripcion` 
+-- AS `descripcion`,`products`.`imagen` AS `imagen`,`products`.`count_view` 
+-- AS `count_view`,`products`.`stock` AS `stock` 
+-- from `products` 
+-- where `products`.`talla` = 'L'

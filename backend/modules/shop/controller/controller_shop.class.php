@@ -7,14 +7,7 @@ class controller_shop
 		$_SESSION['module'] = "shop";
 	}
 
-	function shop()
-	{
-		//print_r("entra en shop");
-		require(VIEW_PATH_INC . "top_page_shop.php");
-		require(VIEW_PATH_INC . "menu.html");
-		loadView('modules/shop/view/', 'shop.html');
-		require(VIEW_PATH_INC . "footer.html");
-	}
+
 
 	function data_products()
 	{ //function obtener todos los productos contando con el limit y el count_view
