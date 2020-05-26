@@ -25,10 +25,10 @@ class shop_model
         return self::$_instance;
     }
 
-    public function data_products($arrArgument)
+    public function data_products()
     {
         //print_r("entra construc model home");
-        return $this->bll->obtain_data_products_bll($arrArgument);
+        return $this->bll->obtain_data_products_bll();
         //return $arrArgument;
     }
 

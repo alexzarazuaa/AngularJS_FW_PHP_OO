@@ -10,26 +10,14 @@
                 <!--DETAILS GMAPS-->
                 <div class="left-side my-4">
                     <div id="textarea">
-                        <h4 class="mb-2"><span class="fa fa-map-marker" aria-hidden="true"
-                                data-tr="VISTA EN MAPA"></span>
+                        <h4 class="mb-2"><span class="fa fa-map-marker" aria-hidden="true" data-tr="VISTA EN MAPA">VISTA
+                                EN MAPA</span>
                         </h4>
                     </div>
                     <div id="mapdetails"></div>
                 </div>
                 <!-- //DETAILS GMAPS-->
 
-                <div id="search">
-
-                    <div class="search-bar w3layouts-newsletter">
-
-                        <h3 class="sear-head">Search Here..</h3>
-                        <form action="#" method="post" class="d-flex">
-                            <input type="search" placeholder="Product name..." name="search" class="form-control"
-                                required="">
-                            <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
-                        </form>
-                    </div>
-                </div>
 
                 <div id="emptyfilters">
                     <!--preference -->
@@ -38,19 +26,19 @@
                         <ul class="w3layouts-box-list">
                             <li>
                                 <input type="checkbox" id="camisetas" class="checked">
-                                <span class="span" data-tr="CAMISETAS"></span>
+                                <span class="span" data-tr="CAMISETAS">CAMISETAS</span>
                             </li>
                             <li>
                                 <input type="checkbox" id="sudaderas" class="checked">
-                                <span class="span" data-tr="SUDADERAS"></span>
+                                <span class="span" data-tr="SUDADERAS">SUDADERAS</span>
                             </li>
                             <li>
                                 <input type="checkbox" id="calzado" class="checked">
-                                <span class="span" data-tr="CALZADO"></span>
+                                <span class="span" data-tr="CALZADO">CALZADO</span>
                             </li>
                             <li>
                                 <input type="checkbox" id="chandal" class="checked">
-                                <span class="span" data-tr="CHANDALS"></span>
+                                <span class="span" data-tr="CHANDALS">CHANDALS</span>
 
                             </li>
                         </ul>
@@ -58,7 +46,7 @@
                     <!-- // preference -->
                     <!-- discounts -->
                     <div class="left-side">
-                        <h3 class="sear-head" data-tr="Rango de Precios"></h3>
+                        <h3 class="sear-head" data-tr="Rango de Precios">Rango de Precios</h3>
                         <ul class="w3layouts-box-list">
                             <li>
                                 <input type="checkbox" id="050" class="checked">
@@ -79,10 +67,9 @@
                         </ul>
                     </div>
                     <!-- //reviews -->
-
                     <!-- //LISTA DE FAVORITOS -->
                     <div class="left-side">
-                        <h3 class="sear-head" data-tr="TUS PRODUCTOS FAVORITOS"></h3>
+                        <h3 class="sear-head" data-tr="TUS PRODUCTOS FAVORITOS">TUS PRODUCTOS FAVORITOS</h3>
                         <ul class="w3layouts-box-list">
                             <li>
                                 <input type="checkbox" id="like" class="checked">
@@ -94,28 +81,39 @@
                     <!-- //LISTA DE FAVORITOS -->
 
                 </div>
-                
+
             </div> <!-- //emptyfilters -->
 
             <!-- //product left -->
             <!-- product right -->
-
-
-            <div class="w3-col l3 s6">
+            <div class="w3-col l3 s6" ng-repeat="data in products">
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="../w3images/jeans2.jpg" style="width:100%">
+                        <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">
                         <span class="w3-tag w3-display-topleft">New</span>
                         <div class="w3-display-middle w3-display-hover">
                             <button class="w3-button">Buy now <i class="fa fa-shopping-cart"></i></button>
                         </div>
                     </div>
-                    <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+                    <p>{{data.nombre}}<br><b>{{data.precio}}€</b></p>
                 </div>
             </div>
-            <!-- //product right -->
 
         </div>
+
     </div>
+</section>
+
+
+<!-- //product right -->
+
+</div>
+</div>
+
+<div id="pags"  ng-show="pages">
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
+    previous-text="&lsaquo;" next-text="&rsaquo;"  items-per-page = "itemsPerPage"></ul>
+</div>
+
 </section>
 <!-- //contact -->

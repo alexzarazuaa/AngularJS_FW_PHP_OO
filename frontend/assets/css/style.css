@@ -1616,11 +1616,12 @@ width: 100%;
     
 }
 
-#ali{
-    display: flex;
-    align-items: center;
-}
-
+#pags {
+  
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
 
 .lgr {
     background: #fff;

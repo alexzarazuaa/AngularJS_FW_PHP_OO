@@ -18,11 +18,11 @@ class shop_dao
     }
 
 
-    public function select_products($db, $arrArgument)
+    public function select_products($db)
     { //prueba conectar con db 
         //print_r("entra function dao");
 
-        $sql = " SELECT * from products order by count_view desc limit $arrArgument , 3";
+        $sql = " SELECT * from products order by count_view desc ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
         //return $loco; 

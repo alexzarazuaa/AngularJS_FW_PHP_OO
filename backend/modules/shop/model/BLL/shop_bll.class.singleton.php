@@ -23,9 +23,9 @@ class shop_bll
 		return self::$_instance;
 	}
 
-	public  function obtain_data_products_bll($arrArgument)
+	public  function obtain_data_products_bll()
 	{
-		return $this->dao->select_products($this->db, $arrArgument);
+		return $this->dao->select_products($this->db);
 	}
 
 	public  function obtain_data_product_bll($idprod)
