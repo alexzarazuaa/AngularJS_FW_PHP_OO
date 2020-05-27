@@ -21,7 +21,7 @@ class controller_shop
 	{ //function para obetener la info de details de producs
 		//print_r($_GET);
 		$json = array();
-		$json = loadModel(MODEL_SHOP, "shop_model", "data_one_product", $_POST['data']);
+		$json = loadModel(MODEL_SHOP, "shop_model", "data_one_product");
 		echo json_encode($json);
 	}
 

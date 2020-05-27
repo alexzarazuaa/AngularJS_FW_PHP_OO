@@ -28,9 +28,9 @@ class shop_bll
 		return $this->dao->select_products($this->db);
 	}
 
-	public  function obtain_data_product_bll($idprod)
+	public  function obtain_data_product_bll()
 	{
-		return $this->dao->select_one_product($this->db, $idprod);
+		return $this->dao->select_one_product($this->db);
 	}
 
 	public  function update_count_views($idprod)

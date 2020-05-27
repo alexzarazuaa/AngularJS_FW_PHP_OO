@@ -29,9 +29,9 @@ class shop_dao
     }
 
 
-    public function select_one_product($db, $idprod)
+    public function select_one_product($db)
     { //select for details products
-        $sql = "SELECT nombre,marca,talla,imagen,precio,descripcion,idprod FROM products  WHERE idprod='$idprod'";
+        $sql = "SELECT nombre,marca,talla,imagen,precio,descripcion,idprod FROM products ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

@@ -32,10 +32,10 @@ class shop_model
         //return $arrArgument;
     }
 
-    public function data_one_product($idprod)
+    public function data_one_product()
     {
         //print_r("entra construc model home");
-        return $this->bll->obtain_data_product_bll($idprod);
+        return $this->bll->obtain_data_product_bll();
         //return $arrArgument;
     }
 

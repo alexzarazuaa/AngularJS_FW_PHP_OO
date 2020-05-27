@@ -21,6 +21,9 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 resolve: {
                                         allproducts: function (services) {
                                                 return services.get('shop', 'data_products');
+                                        },
+                                        detailsprod : function(services,$route){
+                                                return services.get('shop','data_one_product' ,  {'idprod': $route.current.params.idprod})
                                         }
                                         // data_categories: function (services) {
                                         //         return services.get('home', 'data_categories');
