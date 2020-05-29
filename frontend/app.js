@@ -21,20 +21,28 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 resolve: {
                                         allproducts: function (services) {
                                                 return services.get('shop', 'data_products');
+                                        },                                        
+                                        detailsprod : function(services){
+                                                return services.get('shop','data_one_product');
                                         },
-                                        detailsprod : function(services,$route){
-                                                return services.get('shop','data_one_product' ,  {'idprod': $route.current.params.idprod})
+                                        filters : function (services){
+                                                return services.get('shop','select_filter'  , {'data': $route.current.params.filters} );
                                         }
-                                        // data_categories: function (services) {
-                                        //         return services.get('home', 'data_categories');
-                                        // },
                                         // count_categoria: function (services) {
                                         //         return services.get('home', 'count_categoria');
                                         // }
                                 }
 
                         })
-
+                        .when('/tienda/:idprod' , {
+                                templateUrl: "frontend/modules/shop/view/details.view.html",
+                                controller: "detailsCtrl",
+                                resolve: {
+                                    prod: function(services, $route) {
+                                        return services.post('shop', 'data_one_product', {'idprod': $route.current.params.idprod})
+                                    }
+                                }
+                        })// end_resolve
                         .when("/contact", { templateUrl: "frontend/modules/contact/view/contact.view.html", controller: "contactCtrl" })
 
 

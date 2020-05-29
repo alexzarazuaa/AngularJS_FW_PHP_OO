@@ -1,0 +1,83 @@
+<section class="ab-info-main py-md-5 py-4">
+    <div class="container py-md-3">
+        <div class="row">
+            <div class="side-bar col-lg-4">
+                <div class="left-side my-4" ng-show="emptyMap">
+                </div>
+                <div ng-show="filters" id="emptyfilters">
+                </div>
+            </div> 
+
+            <div class="left-ads-display col-lg-8" id="prod" ng-show="details">
+                 <a href='#/tienda/{{data.idprod}}'> 
+                    <div id="products">
+                        <div class="left-ads-display col-lg-8">
+                            <div class="row">
+                                <div class="desc1-left col-md-6"> <img
+                                        ng-src="http://localhost/SPORT_V1.7/{{product.imagen}}" class="img-fluid" alt="">
+                                </div>
+                                <div class="desc1-right col-md-6 pl-lg-4">
+                                    <h3>{{product.nombre}}</h3>
+                                    <h5>{{product.precio}}€<span></span>
+                                        <div class='available mt-3'>
+                                            <button
+                                                class='btn btn-default btn-lg like  " + info[0].idprod + "' ' 
+                                                id='" + info[0].idprod + "' id=''>❤</button>
+                                              </span>
+                                              <div id=' cont_comprar'>
+                                                  <select id='" + info[0].idprod + "'>
+                                                  </select>
+                                                  <button
+                                                    class='baddcart' id='" + info[0].idprod + "'>Add to cart
+                                                </button>
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="share-desc">
+                                    <div class="share">
+                                        <h4>Share Product :</h4>
+                                        <ul class="w3layouts_social_list list-unstyled">
+                                            <li><a href="#" class="w3pvt_facebook"> <span
+                                                        class="fa fa-facebook-f"></span></a>
+                </a></li>
+                <li class="mx-2"><a href="#" class="w3pvt_twitter"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#" class="w3pvt_dribble"><span class="fa fa-dribbble"></span></a>
+                </li>
+                <li class="ml-2"><a href="#" class="w3pvt_google"><span class="fa fa-google-plus"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    </div>
+    <div class="row sub-para-w3layouts mt-5">
+        <h3 class="shop-sing"><strong>MARCA :</strong> {{product.marca}} <BR> <strong>PRODUCTO
+                :</strong> {{product.nombre}}<BR><strong> DESCRIPCIÓN :</strong></h3>
+        <p>{{product.descripcion}}</p>
+
+        </a>
+    </div>
+    <div>
+        <img style="display: flex ; margin: auto;  text-align: center;"
+            ng-src="http://localhost/SPORT_V1.7/frontend/assets/img/details.jfif">
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+</section>
+
+</div>
+</div>
+</section>
+
+
+</div>
+</div>
+</section>

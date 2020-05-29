@@ -7,7 +7,7 @@
 
 
                 <!--DETAILS GMAPS-->
-                <div class="left-side my-4" ng-show="emptyMap">
+                <div class="left-side my-4" >
                     <div id="textarea">
                         <h4 class="mb-2"><span class="fa fa-map-marker" aria-hidden="true" data-tr="VISTA EN MAPA">VISTA
                                 EN MAPA</span>
@@ -17,7 +17,7 @@
                 </div>
                 <!-- //DETAILS GMAPS-->
 
-                <div ng-show="filters" id="emptyfilters">
+                <div  id="emptyfilters">
                     <!--preference -->
                     <div class="left-side my-4">
                         <h3 class="sear-head" data-tr="Categorias"></h3>
@@ -86,21 +86,23 @@
 
             <!-- //product left -->
             <!-- product right -->
-            <div class="w3-col l3 s6" ng-repeat="data in products" ng-show="all">
+            <div class="w3-col l3 s6" ng-repeat="data in products" >
+                <a class="inner"  href="#/tienda/{{data.idprod}}">
                 <div class="w3-container">
                     <div class="w3-display-container">
                         <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">
                         <span class="w3-tag w3-display-topleft">New</span>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button" ng-click="Details(data.idprod)">Buy now <i
+                            <button class="w3-button" >Buy now <i
                                     class="fa fa-shopping-cart"></i></button>
                         </div>
                     </div>
                     <p>{{data.nombre}}<br><b>{{data.precio}}€</b></p>
                 </div>
+                </a>
             </div>
             <!--ONLY FOR ONE PRODUCT-->
-            <div class="w3-col l3 s6" ng-repeat="data in products" ng-show="search">
+            <div class="w3-col l3 s6" ng-repeat="data in products" >
                 <div class="w3-container">
                     <div class="w3-display-container">
                         <img ng-src="http://localhost/SPORT_V1.7/{{data[0].imagen}}" style="width:100%">
@@ -114,53 +116,14 @@
                 </div>
             </div>
             <!-- //ONLY FOR ONE PRODUCT-->
-
-
-
-            <div class="left-ads-display col-lg-8" id="prod" ng-show="details">
-
-                <div id="products">
-                    <div class="left-ads-display col-lg-8">
-                        <div class="row">
-                            <div class="desc1-left col-md-6"> <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" class="img-fluid"
-                                    alt=""> </div>
-                            <div class="desc1-right col-md-6 pl-lg-4">
-                                <h3>{{data.nombre}}</h3>
-                                <h5>{{data.precio}}€<span></span>
-                                <div class='available mt-3'><button
-                                        class='btn btn-default btn-lg like  " + info[0].idprod + "' ' id='" + info[0].idprod + "' id=''>❤</button>
-                    </span><div id=' cont_comprar'><select id='" + info[0].idprod + "'></select><button
-                                            class='baddcart' id='" + info[0].idprod + "'>Add to cart</button></div>
-                            </div>
-                            <br>
-                            <div class="share-desc">
-                                <div class="share">
-                                    <h4>Share Product :</h4>
-                                    <ul class="w3layouts_social_list list-unstyled">
-                                        <li><a href="#" class="w3pvt_facebook"> <span
-                                                    class="fa fa-facebook-f"></span></a></a></li>
-                                        <li class="mx-2"><a href="#" class="w3pvt_twitter"><span
-                                                    class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#" class="w3pvt_dribble"><span class="fa fa-dribbble"></span></a>
-                                        </li>
-                                        <li class="ml-2"><a href="#" class="w3pvt_google"><span
-                                                    class="fa fa-google-plus"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row sub-para-w3layouts mt-5">
-                        <h3 class="shop-sing"><strong>MARCA :</strong> {{data.marca}} <BR> <strong>PRODUCTO
-                                :</strong> {{data.nombre}}<BR><strong> DESCRIPCIÓN :</strong></h3>
-                        <p>{{data.descripcion}}</p>
-                    </div>
-                </div>
-                <div id="npg"></div>
-
-            </div>
         </div>
+    </div>
+</section>
+
+    </div>
+
+    </div>
+    </div>
 
     </div>
     </div>
@@ -177,7 +140,7 @@
 </div>
 </div>
 
-<div id="pags" ng-show="pages">
+<div id="pags" >
     <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
         previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page="itemsPerPage"></ul>
 </div>
