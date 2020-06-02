@@ -6,7 +6,9 @@ mastersport.controller('detailsCtrl', function ($scope, prod) {
 
     $scope.product = {};
 
-    angular.forEach(prod[0], function (value, key) {
+   
+    angular.forEach(prod[0], function(value,key){
         $scope.product[key] = value;
     });
+    
 });

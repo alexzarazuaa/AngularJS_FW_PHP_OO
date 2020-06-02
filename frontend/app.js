@@ -21,13 +21,10 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 resolve: {
                                         allproducts: function (services) {
                                                 return services.get('shop', 'data_products');
-                                        },                                        
-                                        detailsprod : function(services){
-                                                return services.get('shop','data_one_product');
-                                        },
-                                        filters : function (services){
-                                                return services.get('shop','select_filter'  , {'data': $route.current.params.filters} );
-                                        }
+                                        }// },                                        
+                                        // filters : function (services){
+                                        //         return services.get('shop','select_filter'  , {'data': $route.current.params.filters} );
+                                        // }
                                         // count_categoria: function (services) {
                                         //         return services.get('home', 'count_categoria');
                                         // }
@@ -43,6 +40,32 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                     }
                                 }
                         })// end_resolve
+                        .when('/login' , {
+                                templateUrl: "frontend/modules/login/view/login.view.html",
+                                controller: "loginCtrl"
+                        })
+                        .when('/register' , {
+                                templateUrl: "frontend/modules/login/view/register.view.html",
+                                controller: "registerCtrl"
+                        })
+                        .when ('/home/active_user/:token' , {
+                                resolve: {
+                                        active_user: function (services, $route,toastr) {
+                                            console.log($route.current.params.token);
+                                             return services.put('home', 'active_user', {'token': $route.current.params.token})
+                                            .then(function(response){
+                                                if (response) {
+                                                        toastr.success('Thank you for verifing your account.' ,'Account verified..');
+                                                    }else {
+                                                        toastr.error('The current token is invalid.' ,'Error');
+                                                    }// end_else
+                                                    location.href = '#/';
+                                            });
+                                        }
+                                    }
+                        })
+
+                        
                         .when("/contact", { templateUrl: "frontend/modules/contact/view/contact.view.html", controller: "contactCtrl" })
 
 

@@ -38,9 +38,10 @@
 	
 			//data variabke with name module,namefunction and the token to check and activate
 			
-	
-				loadModel(MODEL_HOME, "home_model", "active_user",$_GET['param']);
-				header('Location: ' . SITE_PATH);
+				$token = $_POST['token'];
+				print_r($token);
+				loadModel(MODEL_HOME, "home_model", "active_user",$token);
+				
 			
 		}
 		

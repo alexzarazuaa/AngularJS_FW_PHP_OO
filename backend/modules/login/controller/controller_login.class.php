@@ -28,24 +28,20 @@ class controller_login
 	function insert_user()
 	{ //function insert_user_manual
 
-		//echo (parse_str($_POST['data'], $matriz));
-		parse_str($_POST['data'], $matriz);
-		//echo json_encode($matriz);
-		//echo json_encode($_POST['data']);
+
 		$json = array();
-		$json = loadModel(MODEL_LOGIN, "login_model", "insert_user_model", $matriz);
-		echo json_encode($json);
-		//print_r($json);
+		$json = loadModel(MODEL_LOGIN, "login_model", "insert_user_model", $_POST['data']);
+		//echo json_encode($json);
 
 		//sendmail
 		$arrArgument = array(
 
 			'type' => 'alta',
 			'token' => $json,
-			'inputName' => $matriz['nickname'],
-			'inputEmail' => $matriz['email']
+			'inputName' =>$_POST['data']['nickname'],
+			'inputEmail' =>$_POST['data']['email']
 		);
-		//print_r($arrArgument);
+
 		//echo json_encode($arrArgument);
 		try {
 			echo  enviar_email($arrArgument);
@@ -67,8 +63,11 @@ class controller_login
 	function exist_id()
 	{ //function insert_user_manual
 
-		parse_str($_POST['data'], $array);
-		$data = array($array, $_POST['manual']);
+		//parse_str($_POST['data'], $array);
+	
+		//parse_str($_POST['data'], $array);
+		$data = array($_POST['data'], $_POST['manual']);
+		//echo json_encode($data);
 
 		$json = array();
 		$json = loadModel(MODEL_LOGIN, "login_model", "exist_id_model", $data);
