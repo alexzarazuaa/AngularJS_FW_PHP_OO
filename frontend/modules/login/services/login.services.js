@@ -1,4 +1,4 @@
-ohanadogs.factory("loginService", ['$location', '$rootScope', 'services','localstorageService','socialService',
+mastersport.factory("loginService", ['$location', '$rootScope', 'services','localstorageService','socialService',
 function ($location, $rootScope, services,localstorageService, socialService) {
 	var service = {};
 	service.login = login;
@@ -10,21 +10,21 @@ function ($location, $rootScope, services,localstorageService, socialService) {
         if (token) {
             services.get('login', 'typeuser',token).then(function (response) {
                 if (response.type === "user") {
-                    $rootScope.loginV = false;
-                    $rootScope.profileV = true;
-                    $rootScope.ubicaV = true;
-                    $rootScope.dogsV = true;
+                    $rootScope.login = false
+                    $rootScope.logout = true
 	            } else if (response.type === "admin") {
-                    $rootScope.loginV = false;
-                    $rootScope.profileV = true;
-                    $rootScope.ubicaV = true;
-                    $rootScope.dogsV = true;
+                    $rootScope.login = false
+                    $rootScope.logout = true
 	            }else{
-                    $rootScope.loginV = true;
+                    $rootScope.login = true
+                    $rootScope.logout = false
                 }
             });
         } else {
-            $rootScope.loginV = true;
+
+            $rootScope.login = true
+            $rootScope.logout = false
+            
         }
     }
 

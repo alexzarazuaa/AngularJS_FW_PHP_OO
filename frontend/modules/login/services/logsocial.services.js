@@ -1,4 +1,4 @@
-ohanadogs.factory("socialService", ['$rootScope', 'services','localstorageService','toastr','$timeout',
+mastersport.factory("socialService", ['$rootScope', 'services','localstorageService','toastr','$timeout',
 function ($rootScope, services, localstorageService, toastr, $timeout) {
 	var service = {};
 	service.initialize = initialize;

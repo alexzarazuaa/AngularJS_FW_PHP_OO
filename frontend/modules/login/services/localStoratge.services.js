@@ -1,4 +1,4 @@
-ohanadogs.factory("localstorageService", ['$timeout', '$filter', '$q', function ($timeout, $filter, $q) { 
+mastersport.factory("localstorageService", ['$timeout', '$filter', '$q', function ($timeout, $filter, $q) { 
 	var service = {};
 	service.getUsers = getUsers;
     service.setUsers = setUsers;

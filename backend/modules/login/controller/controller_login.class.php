@@ -41,7 +41,7 @@ class controller_login
 			'inputName' =>$_POST['data']['nickname'],
 			'inputEmail' =>$_POST['data']['email']
 		);
-
+		//print_r($arrArgument);
 		//echo json_encode($arrArgument);
 		try {
 			echo  enviar_email($arrArgument);
@@ -135,20 +135,20 @@ class controller_login
 
 	function login_user(){
 
-		parse_str($_POST['data'], $matriz);
-		//echo json_encode($matriz);
-
+	
+		$data = array($_POST['data']['email'],$_POST['data']['password']);
+		//echo json_encode($data) ;
 		$json = array();
-		$json = loadModel(MODEL_LOGIN, "login_model", "check_usermail_model",$matriz['email'],$matriz['password']);
+		$json = loadModel(MODEL_LOGIN, "login_model", "check_usermail_model",$data[0],$data[1]);
 		
-		//print_r($json);
+		//echo json_encode($json);
 
 		if ($json !== true){
 			//print_r("entra en true");
-			// print_r($matriz['password']);
+			//  print_r($data[1]);
 			// print_r($json[0]['password']);
-			if(password_verify($matriz['password'],$json[0]['password'])){
-							$jwt_token=generate_token_JWT($matriz['email']);
+			if(password_verify($data[1],$json[0]['password'])){
+							$jwt_token=generate_token_JWT($data['email']);
 							//print_r($jwt_token);
 							$response = array(
 								'response' => "correct",

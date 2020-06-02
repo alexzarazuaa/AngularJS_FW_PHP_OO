@@ -1,20 +1,20 @@
 <!-- mian-content -->
 <div id="home">
   <!-- header -->
-  <header class="header">
+  <header class="header" ng-controller="menuCtrl">
 
     <div class="w3-top">
       <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a href="#/" class="w3-bar-item w3-button"><b>MASTERSPORT</b></a>
         <!-- Float links to the right. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
-          <a href="#/" class="w3-bar-item w3-button">HOME</a>
-          <a href="#/tienda" class="w3-bar-item w3-button">SHOP</a>
+          <a href="#/" class="w3-bar-item w3-button" >HOME</a>
+          <a href="#/tienda" class="w3-bar-item w3-button"  >SHOP</a>
           <!--AQUI IRAN LAS OPCINES DE EL CRUD DE USUARIOS Y EL ORDER DE LOS FAVS USERS-->
-          <a href="#/contact" class="w3-bar-item w3-button">CONTACT</a>
-          <a id="login_register" type="button" class="btn btn-success" href="#/"><i class="fa fa-shopping-cart"></i></a>
-          <a id="login_register" type="button" class="btn btn-danger" href="#/login">LOGIN</a>
-            <!--PONER EL BOTON DE LOGOUT-->
+          <a href="#/contact" class="w3-bar-item w3-button"  >CONTACT</a>
+          <a id="login_register" type="button" class="btn btn-success" href="#/"  ><i class="fa fa-shopping-cart"></i></a>
+          <a id="login_register" type="button" class="btn btn-danger" href="#/login"  ng-show="login" >LOGIN</a>
+            <a ng-href="#/logout" id="logout" class="nav-link text-uppercase"  ng-show="logout" >Logout</a>
           <a>
             <input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Buscar en Mastersport...">
             <!-- <button  class="btn" ng-click="search()">Search</button> -->

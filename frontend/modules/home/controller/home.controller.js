@@ -21,4 +21,9 @@ mastersport.controller('homeCtrl', function ($scope, data_carousel, data_categor
     }
   }//end_loadmore 
 
+
+  mastersport.controller('menuCtrl', function(loginService) {
+    loginService.login();
+  });
+
 })//END_HOME_CONTROLLER
