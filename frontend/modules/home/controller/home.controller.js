@@ -1,7 +1,4 @@
 mastersport.controller('homeCtrl', function ($scope, data_carousel, data_categories, count_categoria, services, $uibModal, CommonService) {
-  // console.log("controller home");
-  //console.log(data_carousel);
-  //  console.log(data_categories);
 
   cont = 2
   $scope.myInterval = 5000;
@@ -10,7 +7,7 @@ mastersport.controller('homeCtrl', function ($scope, data_carousel, data_categor
   $scope.slides = data_carousel;
   $scope.prods = data_categories.slice(0, cont)
   $scope.index = 0;
-  //console.log($scope.prods);
+
 
   $scope.loadmore = function () {
     cont = cont + 2;
@@ -22,8 +19,15 @@ mastersport.controller('homeCtrl', function ($scope, data_carousel, data_categor
   }//end_loadmore 
 
 
-  mastersport.controller('menuCtrl', function(loginService) {
-    loginService.login();
-  });
+
+
 
 })//END_HOME_CONTROLLER
+
+mastersport.controller('mainController', function ($scope, loginService) {
+  loginService.login();
+  $scope.logout = function (loginService) {
+    location.href = '#/';
+    loginService.logout();
+  };// endlogOut
+});

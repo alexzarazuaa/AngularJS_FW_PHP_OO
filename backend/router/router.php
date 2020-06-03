@@ -126,10 +126,10 @@ function handlerfunction($module, $obj, $function_uri)
     }
 
     if (!$exist) {
-        require_once(VIEW_PATH_INC . "menu.html");
+        require_once(VIEW_PATH_INC . "menu.view.html");
         require_once(VIEW_PATH_INC . "error404.php");
         require_once(VIEW_PATH_INC . "top_page.php");
-        require_once(VIEW_PATH_INC . "footer.html");
+        require_once(VIEW_PATH_INC . "footer.view.html");
     } else {
         call_user_func(array($obj, $event)); //call to the function in envent and obj is the module
     }

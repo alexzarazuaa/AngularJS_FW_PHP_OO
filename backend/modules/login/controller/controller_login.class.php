@@ -119,10 +119,11 @@ class controller_login
 	{
 
 		//if (isset($_GET['param'])){
-			parse_str($_POST['data'], $matriz);
-			echo json_encode($matriz);
+			//parse_str($_POST['data'], $matriz);
+			//echo json_encode($matriz);
 			//echo json_encode($_POST['data']);
-			$data = array($matriz['newpassword'],$_POST['token']);
+			echo json_encode( $_POST['data']['password']);
+			$data = array($_POST['data']['password'],$_POST['token']);
 			
 	
 			$json = array();

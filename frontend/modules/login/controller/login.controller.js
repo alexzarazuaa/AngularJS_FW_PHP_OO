@@ -1,6 +1,5 @@
-mastersport.controller('loginCtrl', function ($scope, services, toastr, $rootScope) {
-    $rootScope.login = true
-    $rootScope.logout = false
+mastersport.controller('loginCtrl', function ($scope, services, toastr, $rootScope,localstorageService,loginService) {
+
     console.log("Login");
 
     $scope.login = function () {
@@ -13,12 +12,10 @@ mastersport.controller('loginCtrl', function ($scope, services, toastr, $rootSco
                 //console.log(response.token_jwt)
                 var info = response.response;
 				if (response.response == info ) {
-                    //console.log("entra");
-                    //localstorageService.setUsers(response.token_jwt);
-                    //console.log(localstorageService.setUsers(response.token_jwt));
+                    console.log("entra");
+                    localstorageService.setUsers(response.token_jwt);
                     toastr.success("You are now logged.", "Logged In");
-                    $rootScope.login = false
-                    $rootScope.logout = true
+                    loginService.login();
                     location.href = "#/";
                 }
             })

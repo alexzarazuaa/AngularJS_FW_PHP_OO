@@ -5,17 +5,18 @@ function ($rootScope, services, localstorageService, toastr, $timeout) {
 	service.insertData = insertData;
     return service;
 
-    function initialize() {
+    function initialize(){
+        // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyCr9CQIJ6QikNWaM1UveNjwugyqWKUIxy0",
-            authDomain: "test-php-js.firebaseapp.com",
-            databaseURL: "https://test-php-js.firebaseio.com",
-            projectId: "test-php-js",
+            apiKey: GHUB_API,
+            authDomain: "fw-php-mastersport.firebaseapp.com",
+            databaseURL: "https://fw-php-mastersport.firebaseapp.com",
+            projectId: "fw-php-mastersport",
             storageBucket: "",
-            messagingSenderId: "613764177727"
+            messagingSenderId: messageSender
         };
         firebase.initializeApp(config);
-    };
+    }
 
     function insertData(user,name,email,avatar){
         var sname = name.split(' ');
@@ -35,7 +36,7 @@ function ($rootScope, services, localstorageService, toastr, $timeout) {
     }
 }]);
 
-ohanadogs.factory("GitHubService", ['$rootScope', 'services','socialService', 'toastr', '$timeout',
+mastersport.factory("GitHubService", ['$rootScope', 'services','socialService', 'toastr', '$timeout',
 function ($rootScope, services, socialService, toastr, $timeout) {
 	var service = {};
 	service.login = login;
@@ -69,7 +70,7 @@ function ($rootScope, services, socialService, toastr, $timeout) {
 
 }]);
 
-ohanadogs.factory("googleService", ['$rootScope', 'services','socialService',
+mastersport.factory("googleService", ['$rootScope', 'services','socialService',
 function ($rootScope, services,socialService) {
 	var service = {};
 	service.login = login;

@@ -44,6 +44,10 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 templateUrl: "frontend/modules/login/view/login.view.html",
                                 controller: "loginCtrl"
                         })
+                        .when('/recoverPass' , {
+                                templateUrl: "frontend/modules/login/view/recover_pass.view.html",
+                                controller: "recoverCtrl"
+                        })
                         .when('/register' , {
                                 templateUrl: "frontend/modules/login/view/register.view.html",
                                 controller: "registerCtrl"

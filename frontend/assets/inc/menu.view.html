@@ -1,20 +1,20 @@
 <!-- mian-content -->
-<div id="home">
+<div id="home"  >
   <!-- header -->
-  <header class="header" ng-controller="menuCtrl">
+  <header class="header" >
 
     <div class="w3-top">
-      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card" >
         <a href="#/" class="w3-bar-item w3-button"><b>MASTERSPORT</b></a>
         <!-- Float links to the right. Hide them on small screens -->
-        <div class="w3-right w3-hide-small">
+        <div class="w3-right w3-hide-small" ng-controller="mainController">
           <a href="#/" class="w3-bar-item w3-button" >HOME</a>
           <a href="#/tienda" class="w3-bar-item w3-button"  >SHOP</a>
           <!--AQUI IRAN LAS OPCINES DE EL CRUD DE USUARIOS Y EL ORDER DE LOS FAVS USERS-->
           <a href="#/contact" class="w3-bar-item w3-button"  >CONTACT</a>
           <a id="login_register" type="button" class="btn btn-success" href="#/"  ><i class="fa fa-shopping-cart"></i></a>
           <a id="login_register" type="button" class="btn btn-danger" href="#/login"  ng-show="login" >LOGIN</a>
-            <a ng-href="#/logout" id="logout" class="nav-link text-uppercase"  ng-show="logout" >Logout</a>
+          <a  ng-click="logout()" class="btn btn-danger" ng-show="logout">Salir</a>
           <a>
             <input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Buscar en Mastersport...">
             <!-- <button  class="btn" ng-click="search()">Search</button> -->
@@ -25,38 +25,6 @@
     </div>
     </div>
 
-
-    <!--SEARCH-->
-    <!-- 
-    <ol class="breadcrumb2">
-
-      <form class="search">
-
-
-        <select id="talla">
-          <option value="0" data-tr="Selecciona La Talla"></option>
-        </select>
-
-
-        <select id="marca">
-          <option value="0" data-tr="Selecciona La Marca"></option>
-        </select>
-
-
-        <section class="prod">
-          <input list="name" id="prod" name="prod" />
-          <datalist id="name">
-          </datalist>
-          <div class="btn"><span id="searchlist" class="fa fa-search" aria-hidden="true"></span></div>
-        </section> -->
-
-
-
-    <!-- <button class="btn"><span class="fa fa-search" aria-hidden="true"></span></button> -->
-    <!--<button class="btn">BUSCAR</button>-->
-    <!-- </form>
-    </ol> -->
-    <!--//SEARCH -->
   </header>
 
 

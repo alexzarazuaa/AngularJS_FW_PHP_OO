@@ -1,4 +1,4 @@
-mastersport.factory("localstorageService", ['$timeout', '$filter', '$q', function ($timeout, $filter, $q) { 
+mastersport.factory("localstorageService", function () { 
 	var service = {};
 	service.getUsers = getUsers;
     service.setUsers = setUsers;
@@ -7,17 +7,19 @@ mastersport.factory("localstorageService", ['$timeout', '$filter', '$q', functio
 
     function getUsers() {
         if(!localStorage.token){
-            localStorage.token = JSON.stringify(false);
+            localStorage.token = JSON.stringify(token);
+            localStorage.getItem('token');
         }
-        return JSON.parse(localStorage.token);
+      
     }
     
     function setUsers(token) {
         localStorage.token = JSON.stringify(token);
+        localStorage.setItem('token', token);
     }
     
     function clearUsers() {
-        localStorage.token = JSON.stringify(false);
+        localStorage.removeItem('token');
     }
 
-}]);
+});

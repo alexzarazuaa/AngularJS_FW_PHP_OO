@@ -1,23 +1,28 @@
-mastersport.factory("loginService", ['$location', '$rootScope', 'services','localstorageService','socialService',
-function ($location, $rootScope, services,localstorageService, socialService) {
+mastersport.factory("loginService", ['$rootScope', 'services','localstorageService','socialService',
+function ( $rootScope, services,localstorageService) {
+  
 	var service = {};
 	service.login = login;
 	service.logout = logout;
     return service;
 
     function login() {
-    	var token = localstorageService.getUsers();
+        //var token = localstorageService.getUsers();
+        var token = localStorage.getItem('token');
         if (token) {
-            services.get('login', 'typeuser',token).then(function (response) {
-                if (response.type === "user") {
+            services.get('login', 'type_user',token).then(function (response) {
+                //console.log(response[0].type);
+            
+                if (response[0].type === "Client") {
+                    console.log("Aqui jeje")
                     $rootScope.login = false
                     $rootScope.logout = true
-	            } else if (response.type === "admin") {
+	            } else if (response[0].type === "admin") {
                     $rootScope.login = false
                     $rootScope.logout = true
 	            }else{
-                    $rootScope.login = true
-                    $rootScope.logout = false
+                    $rootScope.login = false
+                    $rootScope.logout = true
                 }
             });
         } else {
@@ -26,9 +31,10 @@ function ($location, $rootScope, services,localstorageService, socialService) {
             $rootScope.logout = false
             
         }
-    }
+    }//end_login
 
     function logout() {
-    	localstorageService.clearUsers();
-    }
+        localstorageService.clearUsers();
+        
+    }//end_logout
 }]);

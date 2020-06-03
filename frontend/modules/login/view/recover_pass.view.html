@@ -1,45 +1,58 @@
 <div id="login_header"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-login">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="#/login" class="active" id="login-form-link">Login</a>
+							<!-- <a href="#/register" class="btn btn-link">Register</a> -->
+						</div>
+						<div class="col-xs-6">
+							<!-- <a href="#" id="register-form-link">Register</a> -->
+							<a href="#/register" class="btn btn-link">Register</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div id="recover_mail"></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
 
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form id="recoverpass" name="recoverpass" role="form" style="display: block;">
+                            <form id="recoverpass" name="recoverpass" role="form" style="display: block;">
 
 
-                            <div class="form-group">
-                                <input type="password" name="newpassword" id="newpassword" tabindex="2"
-                                    class="form-control" placeholder="New Password">
-                                <span id="err_passnew"></span>
-                            </div>
-
-
-                            <div class="form-group">
-                                <input type="password" name="reppassword" id="reppassword" tabindex="2"
-                                    class="form-control" placeholder="Repeat Password">
-                                <span id="err_passrepeat"></span>
-                            </div>
-
-
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <input type="button" name="password-submit" id="recoverbtnpass" tabindex="4"
-                                            class="form-control btn btn-login" value="CHANGE PASSWORD">
+                                <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                                    <input type="password" name="newpassword" id="newpassword" tabindex="2" ng-model="recoverdata.password" required
+                                        class="form-control" placeholder="New Password">
+                                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                                </div>
+    
+    
+                                <div class="form-group" ng-class="{ 'has-error': form.password2.$dirty && form.password2.$error.required }">
+                                    <input  compare-to="recoverdata.password" type="password" name="reppassword" id="reppassword" tabindex="2"
+                                        class="form-control" placeholder="Repeat Password"  ng-model="password2" required >
+                                        <span ng-show="form.confirmPassword.$error.noMatch" class="help-block">Password doesn't match</span>
+                                </div>
+    
+    
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="button" name="password-submit" id="recoverbtnpass" tabindex="4"
+                                                class="form-control btn btn-login" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading" value="CHANGE PASSWORD">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+    
+                            </form>
+    
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
