@@ -48,9 +48,18 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 templateUrl: "frontend/modules/login/view/recover_pass.view.html",
                                 controller: "recoverCtrl"
                         })
+                        .when('/login/changePass/:token' , {
+                                templateUrl: "frontend/modules/login/view/changepass.view.html",
+                                controller: "recoverCtrl"
+                        })
+
                         .when('/register' , {
                                 templateUrl: "frontend/modules/login/view/register.view.html",
                                 controller: "registerCtrl"
+                        })
+                        .when('/micuenta' , {
+                                templateUrl: "frontend/modules/login/view/recover_pass.view.html",
+                                controller: "recoverCtrl"
                         })
                         .when ('/home/active_user/:token' , {
                                 resolve: {

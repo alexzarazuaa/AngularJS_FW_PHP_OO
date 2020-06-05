@@ -79,12 +79,14 @@ class controller_login
 	{
 
 			//print_r("recoever mail");
-				//echo("esta empty");
-			parse_str($_POST['data'], $array);
-			//$data = array($array,$_POST['manual']);
+			
+		
+			//echo  json_encode ($_POST['data']);
+			//echo json_encode(parse_str($_POST['data'], $array));
+			
 
 			$json = array();
-			$json = loadModel(MODEL_LOGIN, "login_model", "mail_recover_model", $array['recmail']);
+			$json = loadModel(MODEL_LOGIN, "login_model", "mail_recover_model", $_POST['data']);
 
 			//print_r($json);
 			//$token = generate_Token_secure(20);
@@ -98,7 +100,7 @@ class controller_login
 
 					'type' => 'changepass',
 					'token' => $json,
-					'inputEmail' => $array['recmail']
+					'inputEmail' => $_POST['data']
 				);
 				//print_r($arrArgument);
 				//echo json_encode($arrArgument);
@@ -118,18 +120,16 @@ class controller_login
 	function change_password()
 	{
 
-		//if (isset($_GET['param'])){
-			//parse_str($_POST['data'], $matriz);
-			//echo json_encode($matriz);
-			//echo json_encode($_POST['data']);
-			echo json_encode( $_POST['data']['password']);
-			$data = array($_POST['data']['password'],$_POST['token']);
+
 			
-	
+
+			$data = array($_POST['data']['newpassword'],$_POST['data']['token']);
+			//echo json_encode($data);
+			
 			$json = array();
 			$json = loadModel(MODEL_LOGIN, "login_model", "update_password_model",$data);
 			echo json_encode($json);
-		//}
+	
 
 	}
 

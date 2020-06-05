@@ -18,13 +18,11 @@ function ($rootScope, services, localstorageService, toastr, $timeout) {
         firebase.initializeApp(config);
     }
 
-    function insertData(user,name,email,avatar){
-        var sname = name.split(' ');
-        var name = sname[0];
-        var surname = sname[1];
-        services.post('login','log_social',
-        {'data_social_net':JSON.stringify({'id_user':user,'user':user,'name':name,'surname':surname,email:email,'avatar':avatar})})
+    function insertData(nickname,user_email,avatar){
+        services.post('login','social_login',
+        {'data':JSON.stringify({'userid':nickname,'user_email':user_email,'nickname':nickname,'avatar':avatar})})
         .then(function(response){
+            console.log(response);
     		localstorageService.setUsers(JSON.parse(response));
     		toastr.success('Inicio de sesion correcto', 'Perfecto',{
                 closeButton: true
@@ -34,6 +32,7 @@ function ($rootScope, services, localstorageService, toastr, $timeout) {
 	        }, 3000 );
     	});
     }
+
 }]);
 
 mastersport.factory("GitHubService", ['$rootScope', 'services','socialService', 'toastr', '$timeout',
@@ -43,11 +42,11 @@ function ($rootScope, services, socialService, toastr, $timeout) {
     return service;
 
     function login() {
-    	var provider = new firebase.auth.GithubAuthProvider();
+        var provider = new firebase.auth.GithubAuthProvider();
         var authService = firebase.auth();
 
         authService.signInWithPopup(provider).then(function(result) {
-            //socialService.insertData(result.user.uid,result.user.displayName,result.user.email,result.user.photoURL);
+            socialService.insertData(result.user.uid,result.user.displayName,result.user.email,result.user.photoURL);
         })
         .catch(function(error) {
             var errorCode = error.code;
@@ -77,8 +76,9 @@ function ($rootScope, services,socialService) {
     return service;
 
     function login() {
-    	var provider = new firebase.auth.GoogleAuthProvider();
+        var provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('email');
+    
         var authService = firebase.auth();
 
         authService.signInWithPopup(provider).then(function(result) {

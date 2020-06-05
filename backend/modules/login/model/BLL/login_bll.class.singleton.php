@@ -110,9 +110,11 @@ class login_bll
 
 	 public function mail_recover_bll($data){
 
+		//print_r($data);
 
 		$check_mail = $this->dao->user_email($this->db);
-		//print_r($data);
+		//print_r($check_mail);
+		
 		//print_r(array_slice($check_mail,0));
 		//print_r(array_slice($check_mail,0));
 		//user_email
@@ -126,10 +128,12 @@ class login_bll
 			if ($res == false) {
 				//si encuentra un mail igual
 				if (($check_mail[$i]['user_email']) == ($data)) {
+					//echo("entra asi  V");
 					$res = true;
 					return $this->dao->updatetoken_mail($this->db,$data);
 					//return true;
 				} else {
+					//echo("entra asi f");
 					$res = false;
 					return false;
 				}

@@ -18,8 +18,8 @@ function enviar_email($arr)
      
         case 'changepass':
             $subject = 'Tu Nuevo Password en EN MASTERSPORT<br>';
-            $ruta = '<a href="' . amigable("?module=login&function=login&param=" . $arr['token'], true) . '">aqu&iacute;</a>';
-            $body = 'Para recordar tu password pulsa ' . $ruta;
+            $ruta = '<a href="http://' . $_SERVER['HTTP_HOST'] . '/SPORT_V1.7/#/login/changePass/'. $arr['token'] .'">aqu&iacute;</a>';
+            $body = 'Si quieres cambiar tu contraseña pulsa en el siguiente enlace' . $ruta;
             break;
 
         case 'contact':

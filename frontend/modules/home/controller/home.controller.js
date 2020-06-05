@@ -26,8 +26,11 @@ mastersport.controller('homeCtrl', function ($scope, data_carousel, data_categor
 
 mastersport.controller('mainController', function ($scope, loginService) {
   loginService.login();
+
   $scope.logout = function (loginService) {
+    console.log("button salir")
     location.href = '#/';
     loginService.logout();
+
   };// endlogOut
 });

@@ -2,6 +2,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
+			<h2 margin:auto;>CAMBIO DE CONTRASEÑA </h2>
 			<div class="panel panel-login">
 				<div class="panel-heading">
 					<div class="row">
@@ -16,6 +17,7 @@
 					</div>
 					<hr>
 				</div>
+		
 				<div id="recover_mail"></div>
 				<div class="panel-body">
 					<div class="row">
@@ -23,26 +25,18 @@
 
                             <form id="recoverpass" name="recoverpass" role="form" style="display: block;">
 
-
-                                <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                                    <input type="password" name="newpassword" id="newpassword" tabindex="2" ng-model="recoverdata.password" required
-                                        class="form-control" placeholder="New Password">
-                                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
-                                </div>
-    
-    
-                                <div class="form-group" ng-class="{ 'has-error': form.password2.$dirty && form.password2.$error.required }">
-                                    <input  compare-to="recoverdata.password" type="password" name="reppassword" id="reppassword" tabindex="2"
-                                        class="form-control" placeholder="Repeat Password"  ng-model="password2" required >
-                                        <span ng-show="form.confirmPassword.$error.noMatch" class="help-block">Password doesn't match</span>
-                                </div>
+								<div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+									<input type="email" name="recmail" id="recmail" tabindex="1" class="form-control"
+										placeholder="EmailAddress" ng-model="recoverData.email" required>
+									<span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required></span>
+								</div>
     
     
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <input type="button" name="password-submit" id="recoverbtnpass" tabindex="4"
-                                                class="form-control btn btn-login" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading" value="CHANGE PASSWORD">
+                                                class="form-control btn btn-login" ng-click="recoverPassword()" ng-disabled="form.$invalid || vm.dataLoading" value="CHANGE PASSWORD">
                                         </div>
                                     </div>
                                 </div>
