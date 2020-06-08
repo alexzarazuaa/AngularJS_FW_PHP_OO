@@ -1,4 +1,5 @@
-mastersport.controller('loginCtrl', function ($scope, services, toastr,localstorageService,loginService,googleService,GitHubService) {
+mastersport.controller('loginCtrl', function ($scope, $timeout,services, toastr,localstorageService,loginService,googleService,GitHubService) {
+    
 
     $scope.login = function () {
         //console.log($scope.logindata);
@@ -30,6 +31,17 @@ mastersport.controller('loginCtrl', function ($scope, services, toastr,localstor
         console.log("github")
         GitHubService.login();
     };
+
+      
+    $scope.logout = function () {
+        //loginService.logout();
+        localStorage.removeItem('token');
+		toastr.success('', 'Session Cerrada')
+        $timeout( function(){
+            location.href = '.';
+        }, 1500 );
+
+      };// endlogOut
 
 
 })

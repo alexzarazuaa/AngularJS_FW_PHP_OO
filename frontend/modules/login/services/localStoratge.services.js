@@ -6,22 +6,20 @@ mastersport.factory("localstorageService", function () {
 	return service;
 
     function getUsers() {
-		if ((!localStorage.token) || (localStorage.token == 'undefined')) {
-			
-        }
-		return localStorage.token;
-	}
-
+      
+            
+            localStorage.getItem('token');
+        
+      
+    }
     
     function setUsers(token) {
-
+       
         localStorage.setItem('token', token);
     }
     
     function clearUsers() {
-
         localStorage.removeItem('token');
-    
     }
 
 });

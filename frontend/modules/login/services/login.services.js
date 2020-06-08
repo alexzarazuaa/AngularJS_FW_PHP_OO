@@ -7,39 +7,35 @@ function ( $rootScope, services,localstorageService) {
     return service;
 
     function login() {
-        var token = localstorageService.getUsers();
-
+        //var token = localstorageService.getUsers();
+        var token = localStorage.getItem('token');
+        console.log(token);
         if (token) {
             services.get('login', 'type_user',token).then(function (response) {
                 //console.log(response[0].type);
             
                 if (response[0].type === "Client") {
-                    //console.log("Aqui jeje")
+                   // console.log("Aqui jeje")
                     $rootScope.login = false
-                    $rootScope.logout = true
                     $rootScope.pass = true
-	            } else if (response[0].type === "admin") {
+	            } else if (response[0].type === "Admin") {
                     $rootScope.login = false
-                    $rootScope.logout = true
                     $rootScope.pass = true
 	            }else{
                     $rootScope.login = false
-                    $rootScope.logout = true
-                    $rootScope.pass = false
+                    $rootScope.pass = true
                 }
             });
         } else {
 
             $rootScope.login = true
-            $rootScope.logout = false
             $rootScope.pass = false
             
         }
     }//end_login
 
-    function logout() {
-        console.log("entra")
+    function logout(localstorageService) {
         localstorageService.clearUsers();
-        
     }//end_logout
+    
 }]);

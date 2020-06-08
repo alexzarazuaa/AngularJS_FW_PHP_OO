@@ -22,21 +22,14 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<h2 margin:auto;>CAMBIO DE CONTRASEÑA </h2>
-                            <form id="recoverpass" name="recoverpass" role="form" style="display: block;">
+							<h2 margin:auto;>Salir de la Session</h2>
+                            <form id="LOGOUT" name="LOGOUT" role="form" style="display: block;">
 
-								<div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
-									<input type="email" name="recmail" id="recmail" tabindex="1" class="form-control"
-										placeholder="EmailAddress" ng-model="recoverData.email" required>
-									<span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required></span>
-								</div>
-    
-    
+						
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="button" name="password-submit" id="recoverbtnpass" tabindex="4"
-                                                class="form-control btn btn-login" ng-click="recoverPassword()" ng-disabled="form.$invalid || vm.dataLoading" value="CHANGE PASSWORD">
+												<button ng-click="logout()">Cerrar sesion</button>
                                         </div>
                                     </div>
                                 </div>

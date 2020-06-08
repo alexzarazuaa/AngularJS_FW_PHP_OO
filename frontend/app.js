@@ -81,6 +81,10 @@ mastersport.config(['$routeProvider', '$locationProvider',
                         
                         .when("/contact", { templateUrl: "frontend/modules/contact/view/contact.view.html", controller: "contactCtrl" })
 
+                        .when('/logout' , {
+                                templateUrl: "frontend/modules/login/view/myaccount.view.html",
+                                controller: "loginCtrl"
+                        })
 
 
                         .otherwise("/", { templateUrl: "frontend/modules/home/view/inicio.view.html", controller: "homeCtrl" });
