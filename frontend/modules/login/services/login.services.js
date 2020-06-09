@@ -9,7 +9,7 @@ function ( $rootScope, services,localstorageService) {
     function login() {
         //var token = localstorageService.getUsers();
         var token = localStorage.getItem('token');
-        console.log(token);
+        //console.log(token);
         if (token) {
             services.get('login', 'type_user',token).then(function (response) {
                 //console.log(response[0].type);

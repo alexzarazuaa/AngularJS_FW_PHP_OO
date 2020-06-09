@@ -11,6 +11,14 @@
         <uri></uri>
     </function>
 
+
+    <function>
+        <name>brands</name>
+        <uri></uri>
+    </function>
+
+    
+
     <function>
         <name>prods_categoria</name>
         <uri></uri>

@@ -32,6 +32,10 @@ class shop_model
         //return $arrArgument;
     }
 
+    public function brands_model (){
+        return $this->bll->obtain_brands_bll();
+    }
+
     public function data_one_product_model($idprod)
     {
         //print_r("entra construc model home");

@@ -138,16 +138,13 @@ class controller_login
 
 	
 		$data = array($_POST['data']['email'],$_POST['data']['password']);
-		//echo json_encode($data) ;
+
 		$json = array();
 		$json = loadModel(MODEL_LOGIN, "login_model", "check_usermail_model",$data[0],$data[1]);
 		
-		//echo json_encode($json);
 
 		if ($json !== true){
-			//print_r("entra en true");
-			//  print_r($data[1]);
-			// print_r($json[0]['password']);
+		
 			if(password_verify($data[1],$json[0]['password'])){
 							$jwt_token=generate_token_JWT($data['email']);
 							//print_r($jwt_token);

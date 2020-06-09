@@ -5,7 +5,7 @@ mastersport.controller('loginCtrl', function ($scope, $timeout,services, toastr,
         //console.log($scope.logindata);
         services.put('login', 'login_user', { data: $scope.logindata })
             .then(function (response) {
-                //console.log(response.response)
+                //console.log(response)
                 var info = response.response;
 				if (response.response == info ) {
                     localstorageService.setUsers(response.token_jwt);

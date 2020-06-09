@@ -28,6 +28,14 @@ class shop_dao
         //return $loco; 
     }
 
+    public function select_brands ($db){
+
+        $sql = " SELECT DISTINCT marca from products  ";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+
+    }
+
 
     public function select_one_product($db,$idprod)
     { //select for details products

@@ -7,7 +7,7 @@
 
 
                 <!--DETAILS GMAPS-->
-                <div class="left-side my-4" >
+                <div class="left-side my-4">
                     <div id="textarea">
                         <h4 class="mb-2"><span class="fa fa-map-marker" aria-hidden="true" data-tr="VISTA EN MAPA">VISTA
                                 EN MAPA</span>
@@ -16,8 +16,25 @@
                     <div id="mapdetails"></div>
                 </div>
                 <!-- //DETAILS GMAPS-->
+                <!-- SEARCH -->
 
-                <div  id="emptyfilters">
+                <div id="search">
+
+                    <div class="search-bar w3layouts-newsletter">
+
+                        <h3 class="sear-head">Search Here..</h3>
+                        <a>
+                            <input type="text" ng-model="selectProds" class="input-medium search-query"
+                            uib-typeahead="data as data.products for data in products | filter:{products:$viewValue} |  limitTo:4"
+		                    uib-typeahead-min-length='1' 
+                                placeholder="Nike,Adidas...">
+                        </a>
+                        <button class="btn1" type="submit" ng-click="search()"><span class="fa fa-search"
+                                aria-hidden="true"></span></button>
+                    </div>
+                </div>
+
+                <div id="emptyfilters">
                     <!--preference -->
                     <div class="left-side my-4">
                         <h3 class="sear-head" data-tr="Categorias"></h3>
@@ -82,37 +99,50 @@
 
             </div> <!-- //emptyfilters -->
 
-
-
             <!-- //product left -->
             <!-- product right -->
-            <div class="w3-col l3 s6" ng-repeat="data in products" >
-                <a class="inner"  href="#/tienda/{{data.idprod}}">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">
-                        <span class="w3-tag w3-display-topleft">New</span>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button" >Buy now <i
-                                    class="fa fa-shopping-cart"></i></button>
+            <div class="w3-col l3 s6" ng-repeat="data in products" ng-show="allprod"> 
+                <a class="inner" href="#/tienda/{{data.idprod}}">
+                    <div class="w3-container">
+                        <div class="w3-display-container">
+                            <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">
+                            <span class="w3-tag w3-display-topleft">New</span>
+                            <div class="w3-display-middle w3-display-hover">
+                                <button class="w3-button">Buy now <i class="fa fa-shopping-cart"></i></button>
+                            </div>
+                          
                         </div>
+                        <p>{{data.nombre}}<br><b>{{data.precio}}€</b></p>
                     </div>
-                    <p>{{data.nombre}}<br><b>{{data.precio}}€</b></p>
-                </div>
                 </a>
             </div>
-
+            <!--for one in search-->
+            <div class="w3-col l3 s6" ng-show="OneSearch" >
+                <a class="inner" href="#/tienda/{{data.idprod}}">
+                    <div class="w3-container">
+                        <div class="w3-display-container">
+                            <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">
+                            <span class="w3-tag w3-display-topleft">New</span>
+                            <div class="w3-display-middle w3-display-hover">
+                                <button class="w3-button">Buy now <i class="fa fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <p>{{data.nombre}}<br><b>{{data.precio}}€</b></p>
+                    </div>
+                </a>
+            </div>
+            <!--//FOR ONE IN SEARCH-->
         </div>
     </div>
 </section>
 
-    </div>
+</div>
 
-    </div>
-    </div>
+</div>
+</div>
 
 
-    </div>
+</div>
 </section>
 
 
@@ -126,7 +156,7 @@
 </div>
 </div>
 
-<div id="pags" >
+<div id="pags" ng-show="pages">
     <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
         previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page="itemsPerPage"></ul>
 </div>

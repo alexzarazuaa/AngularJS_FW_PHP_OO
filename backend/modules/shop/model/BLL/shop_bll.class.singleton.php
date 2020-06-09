@@ -32,6 +32,9 @@ class shop_bll
 	{
 		return $this->dao->select_one_product($this->db,$idprod);
 	}
+	public function obtain_brands_bll (){
+		return $this->dao->select_brands($this->db);
+	}
 
 	public  function update_count_views($idprod)
 	{

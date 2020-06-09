@@ -16,6 +16,10 @@ class controller_shop
 		$json = loadModel(MODEL_SHOP, "shop_model", "data_products", $_POST['data']);
 		echo json_encode($json);
 	}
+	function brands (){
+		$json = array();
+		$json = loadModel(MODEL_SHOP, "shop_model", "brands_model", $_POST['data']);
+	}
 
 	function data_one_product()
 	{ //function para obetener la info de details de producs
@@ -90,6 +94,8 @@ class controller_shop
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "insert_like_model", $_SESSION['nickname'], $_POST['idprod']);
 		echo json_encode($json);
+
+
 	}
 
 	function unlike()
@@ -107,5 +113,7 @@ class controller_shop
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "paint_likes_model", $_SESSION['nickname']);
 		echo json_encode($json);
+
+	
 	}
 }

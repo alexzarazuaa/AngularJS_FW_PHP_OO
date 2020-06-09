@@ -10,7 +10,7 @@ function activiti() {
             if (data == "inactive") {
                 toastr.error("Se ha cerrado la cuenta por inactividad", "SESSION CERRADA.");
                 //OJO CAMBIAR LA URL
-                //setTimeout('window.location.href = "index.php?page=controller_login&op=logout";', 1000);
+                setTimeout('window.location.href = "#/";', 1000);
 
             }
         })
@@ -38,21 +38,7 @@ function session() {
 }
 
 
-// var act = function (url, data) { //GENERAL FUNCTION RETURN PROMISE
 
-//     console.log(data)
-
-//     return new Promise(function (resolve) {
-//         $.ajax({
-//             type: "POST",
-//             url: url,
-//             data: data
-//         })
-//             .done(function (data) {
-//                 resolve(data);
-//             })
-//     })
-// };
 
 
 $(document).ready(function () {

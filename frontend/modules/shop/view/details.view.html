@@ -20,9 +20,8 @@
                                     <h3>{{product.nombre}}</h3>
                                     <h5>{{product.precio}}€<span></span>
                                         <div class='available mt-3'>
-                                            <button
-                                                class='btn btn-default btn-lg like  " + info[0].idprod + "' ' 
-                                                id='" + info[0].idprod + "' id=''>❤</button>
+                                            <button class='btn btn-default btn-lg like' id='' ng-click="fav(product.idprod)" ng-show="fav">❤</button>
+                                            <button class='btn btn-danger btn-lg like' id='' ng-click="disfav(product.idprod)" ng-show="disfav">❤</button>
                                               </span>
                                               <div id=' cont_comprar'>
                                                   <select id='" + info[0].idprod + "'>
