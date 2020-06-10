@@ -4,6 +4,7 @@ mastersport.controller('detailsCtrl', function ($scope, prod, services, toastr, 
 	
 
     $scope.details = true;
+    
     $scope.fav = true;
     $scope.disfav = false;
 

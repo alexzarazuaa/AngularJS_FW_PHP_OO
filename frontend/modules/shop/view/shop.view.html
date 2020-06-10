@@ -22,12 +22,11 @@
 
                     <div class="search-bar w3layouts-newsletter">
 
-                        <h3 class="sear-head">Search Here..</h3>
+                        <h3 class="sear-head">Buscar en MasterSport...</h3>
                         <a>
-                            <input type="text" ng-model="selectProds" class="input-medium search-query"
-                            uib-typeahead="data as data.products for data in products | filter:{products:$viewValue} |  limitTo:4"
-		                    uib-typeahead-min-length='1' 
-                                placeholder="Nike,Adidas...">
+                            <input type="text" ng-model="selectProds" placeholder="Nike,Adidas..." 
+                            uib-typeahead="data as data.brands for data in brands | filter:{brands:$viewValue} |  limitTo:4"
+                            uib-typeahead-min-length='1'>
                         </a>
                         <button class="btn1" type="submit" ng-click="search()"><span class="fa fa-search"
                                 aria-hidden="true"></span></button>
@@ -101,7 +100,7 @@
 
             <!-- //product left -->
             <!-- product right -->
-            <div class="w3-col l3 s6" ng-repeat="data in products" ng-show="allprod"> 
+            <div class="w3-col l3 s6" ng-repeat="data in products | filter:selectProds" ng-show="allprod"> 
                 <a class="inner" href="#/tienda/{{data.idprod}}">
                     <div class="w3-container">
                         <div class="w3-display-container">

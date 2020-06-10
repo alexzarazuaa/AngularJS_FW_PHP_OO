@@ -65,10 +65,7 @@ mastersport.config(['$routeProvider', '$locationProvider',
                                 templateUrl: "frontend/modules/login/view/register.view.html",
                                 controller: "registerCtrl"
                         })
-                        .when('/micuenta', {
-                                templateUrl: "frontend/modules/login/view/recover_pass.view.html",
-                                controller: "recoverCtrl"
-                        })
+                    
                         .when('/home/active_user/:token', {
                                 resolve: {
                                         active_user: function (services, $route, toastr) {
@@ -88,10 +85,18 @@ mastersport.config(['$routeProvider', '$locationProvider',
 
 
                         .when("/contact", { templateUrl: "frontend/modules/contact/view/contact.view.html", controller: "contactCtrl" })
-
+                        .when('/micuenta', {
+                                templateUrl: "frontend/modules/login/view/recover_pass.view.html",
+                                controller: "recoverCtrl"
+                        })
                         .when('/logout', {
                                 templateUrl: "frontend/modules/login/view/myaccount.view.html",
                                 controller: "loginCtrl"
+                        })
+                        .when('/checkout',{
+                                templateUrl: "frontend/modules/cart/view/cart.view.html",
+                                controller: "cartCtr"
+
                         })
 
 
