@@ -19,12 +19,7 @@ class home_model
         }
         return self::$_instance;
     }
-
-    public function prueba_data()
-    {
-        //print_r("entra construc model home");
-        return $this->bll->obtain_data_list_BLL();
-    }
+    
     public function data_carousel()
     {
         //print_r("entra construc model home");

@@ -1,10 +1,5 @@
 <?php
 
-//require(SITE_ROOT . "modules/shop/model/BLL/shop_bll.class.singleton.php");
-
-// echo json_encode("products model class");
-// exit;
-
 class shop_model
 {
 
@@ -27,7 +22,7 @@ class shop_model
 
     public function data_products()
     {
-        //print_r("entra construc model home");
+       
         return $this->bll->obtain_data_products_bll();
         //return $arrArgument;
     }
@@ -38,7 +33,7 @@ class shop_model
 
     public function data_one_product_model($idprod)
     {
-        //print_r("entra construc model home");
+       
         return $this->bll->obtain_data_product_bll($idprod);
         //return $arrArgument;
     }
@@ -73,13 +68,13 @@ class shop_model
     public function obtain_geomaps_desc($latitud, $longitud)
     {
         return $this->bll->obtain_geomaps_desc_bll($latitud, $longitud);
-        //return $longitud,$latitud;
+        
     }
 
     public function obtain_countpages_model()
     {
         return $this->bll->obtain_countpages_bll();
-        //return $longitud,$latitud;
+        
     }
 
 

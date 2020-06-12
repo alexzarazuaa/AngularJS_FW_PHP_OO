@@ -1,6 +1,5 @@
 <?php
-// print_r ("entra dai ");
-// die();
+
 class login_dao
 {
     static $_instance;
@@ -32,7 +31,6 @@ class login_dao
 
         return $token;
 
-        // return $data;
 
     } //end_insert
 

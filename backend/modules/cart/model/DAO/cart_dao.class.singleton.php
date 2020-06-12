@@ -18,16 +18,15 @@ class cart_dao
     }
 
 
-    public function select_products($db, $arrArgument)
-    { //prueba conectar con db 
-        //print_r("entra function dao");
-
-        $sql = " SELECT * from products order by count_view desc limit $arrArgument , 3";
+    public function show_cart($db, $id)
+    { 
+        $sql = "SELECT * FROM products where idprod in (SELECT id_prod FROM cart where id='$id')";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
-        //return $loco; 
+       
     }
 
+  
 
 
 }

@@ -1,15 +1,11 @@
 
-mastersport.controller('detailsCtrl', function ($scope, prod, services, toastr, favs, $timeout) {
-
-	
+mastersport.controller('detailsCtrl', function ($scope, prod, services, toastr, $timeout) {
 
     $scope.details = true;
-    
     $scope.fav = true;
     $scope.disfav = false;
-
-
     $scope.product = {};
+
 
 
 
@@ -83,6 +79,28 @@ mastersport.controller('detailsCtrl', function ($scope, prod, services, toastr, 
         }
 
     }//end_dislike
+
+
+    //Function add to cart
+    $scope.addcart = function (idprod) {
+        console.log("entra add cart")
+        console.log(idprod)
+        let token = localStorage.getItem('token')
+        if (token) {
+            console.log("Esta logueado")
+            services.put('shop','add_cart',{data:idprod})
+            .then(function (response) {
+                console.log(response)
+                toastr.success('Producto añadido al carrito','Añadido al Carrito')
+            })
+        } else {
+            toastr.error('Debes estar Registrado', 'Registrate');
+            $timeout(function () {
+                location.href = '#/login';
+            }, 1000);
+        }
+
+    }//end_function_addCart
 
 
 

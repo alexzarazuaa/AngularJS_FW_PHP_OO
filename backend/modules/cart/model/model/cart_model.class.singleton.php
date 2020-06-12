@@ -18,10 +18,10 @@ class cart_model {
         return self::$_instance;
     }
 
-    public function data_products($arrArgument){
-         //print_r("entra construc model home");
-        return $this->bll->obtain_data_products_bll($arrArgument);
-        //return $arrArgument;
+    public function show_cart_model($db,$id){
+         
+        return $this->bll->show_cart_bll($db,$id);
+       
     }
 
 

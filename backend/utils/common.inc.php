@@ -50,27 +50,3 @@
     }
 
 
-
-    function generate_token_JWT($iduser){
-        $header = '{"typ":"JWT", "alg":"HS256"}';
-        $secret = generate_Token_secure(20);
-    
-        $arrayPayload =array(
-            'iat' => time(),
-            'exp'=> time() + (15 * 60),
-            'name'=> $iduser
-           );
-           $payload = json_encode($arrayPayload);
-    
-        $JWT = new JWT;
-        return $JWT->encode($header, $payload, $secret);
-      
-    }
-
-
-    function decode_token($token){
-        $secret = generate_Token_secure(20);
-        $JWT = new JWT;
-        $json = $JWT->decode($token, $secret);
-        return $json;
-    }

@@ -17,9 +17,6 @@
 	        return self::$_instance;
 	    }
 
-	    public function obtain_data_list_BLL(){
-	      return $this->dao->select_data($this->db);
-	    }
 	    public function obtain_carousel_BLL(){
 	      return $this->dao->select_img_carousel($this->db);
 		}

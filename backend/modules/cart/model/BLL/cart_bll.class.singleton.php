@@ -1,7 +1,5 @@
 <?php
 
-
-
 class cart_bll
 {
 	private $dao;
@@ -22,10 +20,9 @@ class cart_bll
 		return self::$_instance;
 	}
 
-	public  function obtain_data_products_bll($arrArgument)
-	{
-		return $this->dao->select_products($this->db, $arrArgument);
+	 public function show_cart_bll($db, $id)
+	{	
+			return $this->dao->show_cart($this->db,$id);
 	}
-
 
 }

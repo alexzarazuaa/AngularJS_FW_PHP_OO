@@ -101,7 +101,7 @@
             <!-- //product left -->
             <!-- product right -->
             <div class="w3-col l3 s6" ng-repeat="data in products | filter:selectProds" ng-show="allprod"> 
-                <a class="inner" href="#/tienda/{{data.idprod}}">
+                <a class="inner" href="#/tienda/{{data.idprod}}" ng-click="count(data.idprod)">
                     <div class="w3-container">
                         <div class="w3-display-container">
                             <img ng-src="http://localhost/SPORT_V1.7/{{data.imagen}}" style="width:100%">

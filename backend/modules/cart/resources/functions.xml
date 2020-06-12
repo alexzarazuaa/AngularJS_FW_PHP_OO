@@ -5,6 +5,13 @@
         <uri></uri>
     </function>
 
+    <function>
+        <name>show_cart</name>
+        <uri></uri>
+    </function>
+
+
+
 
 
 </functions>

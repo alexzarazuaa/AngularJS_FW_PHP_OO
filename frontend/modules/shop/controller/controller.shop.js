@@ -1,4 +1,4 @@
-mastersport.controller('shopCtrl', function ($scope, allproducts, brands, toastr) {
+mastersport.controller('shopCtrl', function ($scope, services,allproducts, brands, toastr) {
 
   $scope.brands = brands;
   $scope.pages = true;
@@ -38,7 +38,6 @@ mastersport.controller('shopCtrl', function ($scope, allproducts, brands, toastr
 
     if (prods.length === 1) {
       $scope.pages = false;
-      $scope.products = prods.slice(0, 4);
       $scope.OneSearch = true;
       $scope.allprod = false;
     } else if (prods.length > 1) {
@@ -56,6 +55,17 @@ mastersport.controller('shopCtrl', function ($scope, allproducts, brands, toastr
 
   }//end_search
 
+
+  // //FOR CLICK COUNT_VIEW EN CADA PRODUCT
+  // $scope.count = function(idprod){
+  //   console.log("entra en count"  + " " +  idprod)
+  //   services.put('shop','count_views',{data : idprod})
+  //   .then(function (response) {
+  //     console.log(response)
+  //   })
+        
+  // }//end_click_count
+ 
 
 
 

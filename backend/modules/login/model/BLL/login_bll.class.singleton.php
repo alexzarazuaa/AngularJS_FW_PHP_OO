@@ -1,7 +1,6 @@
 <?php
 
-//  require_once(MODEL_PATH . "db.class.singleton.php");
-//  require(SITE_ROOT . "modules/shop/model/DAO/shop_dao.class.singleton.php");
+
 
 class login_bll
 {
@@ -49,8 +48,7 @@ class login_bll
 	{
 
 		$id =  $this->dao->select_id($this->db);
-		//print_r($data[0]['email']);
-		//print_r(array_slice($id,0));
+
 
 		$res = false;
 		$rlt = false;
@@ -60,7 +58,7 @@ class login_bll
 				if (($id[$i]['userid']) == ($data[0]['nickname'])) {
 					$res = true;
 					return "THIS USER NAME IS ALREADY IN USE";
-					// break;
+				
 				} else {
 					$res = false;
 					$rlt = "OK";
@@ -114,11 +112,8 @@ class login_bll
 
 		$check_mail = $this->dao->user_email($this->db);
 		//print_r($check_mail);
-		
-		//print_r(array_slice($check_mail,0));
-		//print_r(array_slice($check_mail,0));
-		//user_email
-
+	
+	
 		$res = false;
 	
 
@@ -156,9 +151,8 @@ class login_bll
 
 		$check_mail = $this->dao->check_user_email($this->db);
 		//echo json_encode($check_mail[0]['token']);
-		//print_r(array_slice($check_mail,0));
-		//print_r(array_slice($check_mail,0));
-		//user_email
+
+
 
 		$res = false;
 	

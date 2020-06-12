@@ -8,20 +8,6 @@ class controller_login
 		$_SESSION['module'] = "login";
 	}
 
-	function login()
-	{
-
-		require(VIEW_PATH_INC . "top_page_login.php");
-		require(VIEW_PATH_INC . "menu.html");
-	
-		if (empty($_GET['param'])){
-			loadView('modules/login/view/', 'login.html');
-		}else{
-			loadView('modules/login/view/', 'recover_pass.html');
-		}
-		require(VIEW_PATH_INC . "footer.html");
-	}
-
 
 
 
@@ -166,10 +152,10 @@ class controller_login
 	
 	function type_user(){
 
-		//echo json_encode($matriz);
-		//echo json_encode($_POST['data']);
-		//$data = array($matriz['newpassword'],$_POST['token']);
+		// $token = decode_token($_POST['token']);
+		// echo ($token);
 
+		
 		$json = array();
 		$json = loadModel(MODEL_LOGIN, "login_model", "exist_type_user_model");
 		echo json_encode($json);
@@ -182,8 +168,7 @@ class controller_login
 		$matriz=$_POST['data'];
 
 		$json=loadModel(MODEL_LOGIN, "login_model", "check_socialuser_model",$matriz);
-		if ($json == null){//NO ESTA REGISTRADO AUN
-			//print_r("json null entra");
+		if ($json == null){//Not registered yet
 			$json=loadModel(MODEL_LOGIN, "login_model", "insert_social_model",$matriz);
 			 echo json_encode("registered");
 		}
@@ -211,9 +196,7 @@ class controller_login
 
 
 	function session (){
-		// parse_str($_POST['data'], $matriz);
-		// echo json_encode($matriz);
-		//$json = array();
+
 		$json = loadModel(MODEL_LOGIN, "login_model", "user_session_model");
 		echo json_encode($json);
 	}//END_SESSION

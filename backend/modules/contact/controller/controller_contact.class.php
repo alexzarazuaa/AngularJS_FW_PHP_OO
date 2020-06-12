@@ -11,10 +11,7 @@ class controller_contact
 
 	function send_cont()
 	{
-		//echo ("SEND_EMAIL");
 
-		// parse_str($_POST['data'], $array);
-		// echo json_encode($array);
 
 		$arrArgument = array(
 
@@ -27,7 +24,7 @@ class controller_contact
 		);
 
 
-		//echo json_encode($arrArgument);
+
 
 		try {
 			echo enviar_email($arrArgument);
@@ -51,7 +48,7 @@ class controller_contact
 
 		try {
 			enviar_email($arrArgument);
-			//echo json_encode("true");
+			
 		} catch (Exception $e) {
 
 			echo json_encode("false");

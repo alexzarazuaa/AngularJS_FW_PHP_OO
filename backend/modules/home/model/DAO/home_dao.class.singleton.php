@@ -1,6 +1,5 @@
 <?php
-// print_r ("entra dai ");
-// die();
+
 class home_dao
 {
     static $_instance;
@@ -18,19 +17,11 @@ class home_dao
     }
 
 
-    public function select_data($db)
-    { //prueba conectar con db 
-        //print_r("entra function dao");
-
-        $sql = "SELECT idprod FROM products ";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
-        //return $loco; 
-    }
+ 
 
     public function select_img_carousel($db)
     { //imagenes carousel
-        $sql = "SELECT link,categoria FROM images ";
+        $sql = "SELECT * FROM images ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
@@ -38,8 +29,8 @@ class home_dao
 
     public function select_categories($db)
     { //data img categories
-         //print_r("entra function dao");
-        $sql = " SELECT categoria,imagen from categories order by cont_viewed desc limit 8 ";
+     
+        $sql = " SELECT * from categories order by cont_viewed desc limit 8 ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
@@ -50,9 +41,8 @@ class home_dao
          return $db->ejecutar($sql);
     }
 
-    public function active_user($db,$data) {
-        // return "dentro select";
-        //$token_update = generate_Token_secure(20);
+    public function active_user($db,$data) {//activar el usuario cuando entra en el enlace del mail
+
         $sql="UPDATE user SET activate=true where token='$data'";
         return $db->ejecutar($sql);
     }

@@ -1,6 +1,5 @@
 <?php
-// print_r ("entra dai ");
-// die();
+
 class contact_dao
 {
     static $_instance;

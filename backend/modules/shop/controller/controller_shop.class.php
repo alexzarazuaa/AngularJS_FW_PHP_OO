@@ -11,7 +11,7 @@ class controller_shop
 
 	function data_products()
 	{ //function obtener todos los productos contando con el limit y el count_view
-		//print_r($_GET);
+		
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "data_products", $_POST['data']);
 		echo json_encode($json);
@@ -23,7 +23,7 @@ class controller_shop
 
 	function data_one_product()
 	{ //function para obetener la info de details de producs
-		//print_r($_GET);
+		
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "data_one_product_model",$_POST['idprod']);
 		echo json_encode($json);
@@ -89,7 +89,7 @@ class controller_shop
 	function likes()
 	{
 
-		// $nickname = $_SESSION['nickname'];
+	
 
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "insert_like_model", $_SESSION['nickname'], $_POST['idprod']);
@@ -100,7 +100,7 @@ class controller_shop
 
 	function unlike()
 	{
-		// $nickname = $_SESSION['nickname'];
+	
 
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "unlike_model", $_SESSION['nickname'], $_POST['idprod']);

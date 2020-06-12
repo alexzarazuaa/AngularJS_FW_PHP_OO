@@ -1,6 +1,5 @@
 <?php
-// print_r ("entra dai ");
-// die();
+
 class shop_dao
 {
     static $_instance;
@@ -103,8 +102,6 @@ class shop_dao
     }
 
 
-    /// LOS LIKES HACERLO CUANDO MIGREMOS EL MODULE DE LOGIN PORQEU COMPROBAMOS SI EL USER ESTA LOGUEADO O NO 
-
     // /////// LIKES
 
     public function like($db, $nickname, $idprod)
@@ -130,7 +127,7 @@ class shop_dao
 
     /// FUNCTION FOR MODULE CART
 
-    // function insert_cart ($db,$idprod,$id) {//FOR INSERT THE PRODUCT IN CART
+    // public function insert_cart ($db,$idprod,$id) {//FOR INSERT THE PRODUCT IN CART
    
     //     $sql = " INSERT INTO cart values ('$idprod','$id') ";
     //     $stmt = $db->ejecutar($sql);
